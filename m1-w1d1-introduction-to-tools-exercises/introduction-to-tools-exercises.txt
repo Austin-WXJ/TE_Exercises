@@ -19,7 +19,7 @@ clutter found in real projects.
     directory to the exercise folder.
 ----
 
-$ cd ~/exercises/m1-w1d1-intro-to-tools-exercises/csharp-helloworld
+$ cd ~/exercises/m1-w1d1-introduction-to-tools-exercises/csharp-helloworld
 
 Note, do not enter the beginning "$" character. It represents the prompt for 
 the command line. This convention is commonly used to visually seperate the 
@@ -30,7 +30,9 @@ actual command from other text in Unix documentation.
 2.  What does the ~ (tilde) character in the above command to change directory 
     refer to?
 ----
-
+<
+the tilde refers to the home directory, which for me is my user file location, e.g. c/Users/awarner
+>
 
 ----
 3.  A good habit to develop, especially while you're developing your skills on 
@@ -39,7 +41,8 @@ actual command from other text in Unix documentation.
 ----
 
 $ pwd
-<type or copy-paste the result here>
+</c/Users/awarner/austinwarner-c-exercises/m1-w1d1-introduction-to-tools-exercises/csharp-helloworld
+>
 
 The present working directory displayed should match the directory you changed 
 to in Exercise 1.  Note, the two may not match at the very beginning if you
@@ -55,7 +58,14 @@ changes directory, and the "pwd" command reflects this.
 ----
 
 $ ls -la
-<type or copy-paste the result here>
+<
+total 8
+drwxr-xr-x 1 awarner 197121    0 May 21 15:57 ./
+drwxr-xr-x 1 awarner 197121    0 May 21 15:57 ../
+drwxr-xr-x 1 awarner 197121    0 May 21 15:57 database/
+drwxr-xr-x 1 awarner 197121    0 May 21 15:57 Helloworld/
+-rw-r--r-- 1 awarner 197121 1000 May 21 15:57 Helloworld.sln
+>
 
 
 ----
@@ -63,14 +73,16 @@ $ ls -la
     Exercise 4 represent?
 ----
 
-<type or copy-paste your answer here>
+<the "." represents the current directory and the ".." is the parent directory the current directory is located within>
 
 ----
 6.  What are the names of the files, including any dot-files, displayed in the
     directory listing in Exercise 4?
 ----
 
-<type or copy-paste your answer here>
+<
+Helloworld.sln
+>
 
 
 ----
@@ -78,7 +90,12 @@ $ ls -la
     the directory listing in Exercise 4?
 ----
 
-<type or copy-paste your answer here>
+<
+./
+../
+database/
+Helloworld/
+>
 
 
 ----

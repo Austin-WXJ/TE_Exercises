@@ -336,10 +336,10 @@ Don't forget to save the file in Notepad!
     work so it can be reviewed by an instructor.
 ----
 
-$ <enter the Git command to display status>
+$ git status
 
-$ <enter the Git command to "stage" all changes>
+$ git add -A
 
-$ <enter the Git command to save all "staged" changes>
+$ git commit -m "20: Final exercise push"
 
-$ <enter the Git command to save local repository to BitBucket>
+$ git remote push origin

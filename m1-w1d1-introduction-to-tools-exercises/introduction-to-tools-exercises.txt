@@ -236,17 +236,42 @@ $ ls -a
     checkin to the local repository, but also push it up to BitBucket. 
 ----
 
-$ <enter the Git command to display status>
-<type or copy-paste the result here>
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
 
-$ <enter the Git command to "stage" all changes>
-<type or copy-paste the result here>
+        modified:   ../../introduction-to-tools-exercises.txt
 
-$ <enter the Git command to save all "staged" changes>
-<type or copy-paste the result here>
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
 
-$ git push
-<type or copy-paste the result here>
+        Program.cs.copy
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+$ git add -A
+
+
+$ git commit -m "15: feature Completion"
+[master 023750a] 15: feature Completion
+ 2 files changed, 49 insertions(+), 12 deletions(-)
+ create mode 100644 m1-w1d1-introduction-to-tools-exercises/csharp-helloworld/Helloworld/Program.cs.copy
+
+
+$ git push origin master
+Counting objects: 24, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (22/22), done.
+Writing objects: 100% (24/24), 697.18 KiB | 0 bytes/s, done.
+Total 24 (delta 6), reused 0 (delta 0)
+To https://bitbucket.org/te-cbus-cohort-5/austinwarner-c-exercises.git
+   a811cd4..023750a  master -> master
+
 
 
 ----
@@ -257,8 +282,8 @@ $ rm Program.cs.copy
 
 The "rm" parameter is the name of the file to be deleted.
 
-$ <enter command to list all files and folders in order to confirm the file deletion>
-<type or copy-paste the result here>
+$ ls -a
+./  ../  App.config  Helloworld.csproj  Program.cs  Properties/
 
 
 ----
@@ -279,8 +304,8 @@ command line when that seems natural.
 
 Regardless of the option you chose, check your new location.
 
-$ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+$ pwd
+/c/Users/awarner/austinwarner-c-exercises/m1-w1d1-introduction-to-tools-exercises/csharp-helloworld
 
 
 ----
@@ -289,9 +314,12 @@ $ <enter command to display present working directory>
 ----
 
 $ mkdir docs
-$ <enter the command to change directory to "docs" using a relative path>
-$ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+
+$ cd docs
+
+$ pwd
+/c/Users/awarner/austinwarner-c-exercises/m1-w1d1-introduction-to-tools-exercises/csharp-helloworld/docs
+
 
 ----
 19. Create a new file name "readme.txt" using Notepad, and add the text

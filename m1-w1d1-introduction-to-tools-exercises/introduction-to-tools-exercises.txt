@@ -342,4 +342,4 @@ $ git add -A
 
 $ git commit -m "20: Final exercise push"
 
-$ git push
+$ git push origin master

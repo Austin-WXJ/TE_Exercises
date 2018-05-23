@@ -535,6 +535,12 @@ namespace VariableNaming
             with a period.
             Example: "Hopper, Grace B." 
             */
+            string firstName = "Austin";
+            string lastName = "Warner";
+            char middleInitial = 'L';
+            string fullName = lastName + ", " + firstName + " " + middleInitial + ".";
+            Console.WriteLine(fullName);
+
 
             /*
             The distance between New York and Chicago is 800 miles, and the train has already travelled 537 miles. 

@@ -548,7 +548,10 @@ namespace VariableNaming
             Hint: The percent completed is the miles already travelled divided by the total miles.
             Challenge: Display as an integer value between 0 and 100 using casts.
             */
-
+            int distanceNycToChicago = 800;
+            int distanceTravelled = 537;
+            decimal percentDistanceCompleted = 100 * ((decimal)distanceTravelled / (decimal)distanceNycToChicago);
+            Console.WriteLine(value: "Percent Distance Travelled: " + (int)percentDistanceCompleted + "%");
         }
     }
 }

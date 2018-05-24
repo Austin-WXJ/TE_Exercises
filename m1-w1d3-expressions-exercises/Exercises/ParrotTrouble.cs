@@ -18,6 +18,7 @@ namespace Exercises
          */
         public bool ParrotTrouble(bool talking, int hour)
         {
+
             return false;
         }
 

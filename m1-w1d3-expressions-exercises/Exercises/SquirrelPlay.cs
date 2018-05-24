@@ -18,6 +18,7 @@ namespace Exercises
         */
         public bool SquirrelPlay(int temp, bool isSummer)
         {
+
             return false;
         }
 

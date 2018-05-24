@@ -18,6 +18,15 @@ namespace Exercises
          */
         public int SortaSum(int a, int b)
         {
+            int c = a + b;
+            if (c >=10 && c<=19)
+            {
+                return 20;
+            }
+            else
+            {
+                return a + b;
+            }
             return 0;
         }
 

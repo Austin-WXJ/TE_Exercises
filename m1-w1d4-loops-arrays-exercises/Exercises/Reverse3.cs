@@ -19,9 +19,9 @@ namespace Exercises
         {
             int[] reverseArray = new int[nums.Length];
             int n = 0;
+
             for (int i = nums.Length - 1; i >= 0; i--)
             {
-                
                 reverseArray[n] = nums[i];
                 n++;
             }

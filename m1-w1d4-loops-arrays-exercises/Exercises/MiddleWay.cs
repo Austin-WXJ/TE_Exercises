@@ -17,8 +17,10 @@ namespace Exercises
          */
         public int[] MiddleWay(int[] a, int[] b)
         {
-
-            return new int[] { };
+            int[] shortArray = new int[2];
+            shortArray[0] = a[a.Length / 2];
+            shortArray[1] = b[b.Length / 2];
+            return shortArray;
         }
 
     }

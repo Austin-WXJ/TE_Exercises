@@ -17,7 +17,8 @@ namespace Exercises
          */
         public int[] Reverse3(int[] nums)
         {
-            return new int[] { };
+
+            return null;
         }
 
     }

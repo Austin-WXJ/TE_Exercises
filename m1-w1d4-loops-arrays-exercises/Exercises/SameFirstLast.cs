@@ -18,7 +18,14 @@ namespace Exercises
          */
         public bool SameFirstLast(int[] nums)
         {
-            return false;
+            bool endsBool = false;
+
+            if (nums.Length > 1 && nums[0] == nums[nums.Length - 1])
+            {
+                endsBool = true;
+            }
+
+            return endsBool;
         }
 
     }

@@ -17,7 +17,24 @@ namespace Exercises
          */
         public int[] MaxEnd3(int[] nums)
         {
-            return new int[] { };
+            int[] maxArray = new int[3];
+
+            if (nums[0] > nums[nums.Length - 1])
+            {
+
+                for (int n = 0; n < nums.Length; n++)
+                {
+                    maxArray[n] = nums[0];
+                }
+            }
+            else if (nums[0] < nums[nums.Length - 1])
+            {
+                for (int n = 0; n < nums.Length; n++)
+                {
+                    maxArray[n] = nums[nums.Length-1];
+                }
+            }
+            return maxArray;
         }
 
     }

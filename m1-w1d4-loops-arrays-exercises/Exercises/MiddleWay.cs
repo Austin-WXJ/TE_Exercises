@@ -17,6 +17,7 @@ namespace Exercises
          */
         public int[] MiddleWay(int[] a, int[] b)
         {
+
             return new int[] { };
         }
 

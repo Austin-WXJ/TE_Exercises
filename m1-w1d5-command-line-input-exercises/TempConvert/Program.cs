@@ -27,7 +27,8 @@ namespace TempConvert
          */
         static void Main(string[] args)
         {
-
+            Console.Write("Please enter the temperature: ");
+            Console.ReadLine();
 
 
         }

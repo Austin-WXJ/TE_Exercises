@@ -31,34 +31,20 @@ namespace DecimalToBinary
 
         static void Main(string[] args)
         {
-            //take in string values to convert into binary
             Console.Write("Please enter in a series of decimal values (separated by spaces): ");
-            string userString = Console.ReadLine();
-            string[] stringArray = userString.Split(' ');
+            string userDecimalString = Console.ReadLine();
+            string[] stringArray = userDecimalString.Split(' ');
+            Console.WriteLine(stringArray);
 
-            int[] value = new int [stringArray.Length];
+            int[] integerArraytoConvert = new int[stringArray.Length];
+            string[] binaryStringArray = new string[stringArray.Length];
             for (int i = 0; i < stringArray.Length; i++)
             {
-                value[i] = int.Parse(stringArray[i]);
+                integerArraytoConvert[i] = int.Parse(stringArray[i]);
+                binaryStringArray[i] = Convert.ToString(integerArraytoConvert[i], 2);
+                Console.WriteLine($"{stringArray[i]} in binary is {binaryStringArray[i]}");
             }
-
-
-            //value = new int.Parse(userString); // loop the parse
-
-            // need to loop through converting each member of the array
-            string binary = Convert.ToString(value, 2);
-
-            // loop to write lines stating the value entered by user and return the binary value
-            for (int i = 0; i < stringArray.Length; i++)
-            {
-                Console.WriteLine();
-                Console.Read();
-            }
-
-
-
-
-
+            Console.ReadLine();
         }
     }
 }

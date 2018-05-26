@@ -31,8 +31,8 @@ namespace Fibonacci
             int number1 = 0;
             int number2 = 1;
  
-            fibonacci = number1 + number2;
             Console.Write($"{number1}, {number2}");
+            fibonacci = number1 + number2;
 
             for (int count = 0; fibonacci < fibonacciSequenceEnd; count++)
             {

@@ -26,6 +26,37 @@ namespace LinearConvert
 
         static void Main(string[] args)
         {
+            double convertedMeasure = 0;
+            string conversionUnit = "";
+
+            Console.Write("Please enter a length to convert: ");
+            string userStringInput = Console.ReadLine();
+            double numberToConvert = double.Parse(userStringInput);
+            Console.WriteLine();
+            Console.Write("Is the measurement in (m)eter, or (f)eet? ");
+            string unitOfMeasure = Console.ReadLine();
+
+            switch (unitOfMeasure)
+            {
+                case "m":
+                case "M":
+                    convertedMeasure = numberToConvert * 3.2808399;
+                    conversionUnit = "feet";
+                    unitOfMeasure = "meters";
+                    break;
+                case "f":
+                case "F":
+                    convertedMeasure = numberToConvert / 3.2808399;
+                    conversionUnit = "meters";
+                    unitOfMeasure = "feet";
+                    break;
+                default:
+                    Console.WriteLine("Please enter a valid choice");
+                    Console.WriteLine();
+                    break;
+            }
+            Console.WriteLine($"{numberToConvert} {unitOfMeasure} is {Math.Round(convertedMeasure, 2)} {conversionUnit}");
+            Console.ReadLine();
 
         }
     }

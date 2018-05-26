@@ -27,7 +27,34 @@ namespace TempConvert
          */
         static void Main(string[] args)
         {
+            double convertedTemperature = 0;
+            string conversionUnit = "";
+
             Console.Write("Please enter the temperature: ");
+            string userStringInput = Console.ReadLine();
+            double temperatureToConvert = double.Parse(userStringInput);
+            Console.WriteLine();
+            Console.Write("Is the temperature in (C)elcius, or (F)arenheit? ");
+            string unitOfMeasure = Console.ReadLine();
+
+            switch (unitOfMeasure.ToLower())
+            {
+                case "f":
+                    convertedTemperature = (temperatureToConvert - 32) / 1.8;
+                    conversionUnit = "Celcius";
+                    unitOfMeasure = "Fahrenheit";
+                    break;
+                case "c":
+                    convertedTemperature = temperatureToConvert * 1.8 + 32;
+                    conversionUnit = "Fahrenheit";
+                    unitOfMeasure = "Celcius";
+                    break;
+                default:
+                    Console.WriteLine("Please enter a valid choice");
+                    Console.WriteLine();
+                    break;
+            }
+            Console.WriteLine($"{temperatureToConvert} {unitOfMeasure} is {Math.Round(convertedTemperature, 2)} {conversionUnit}");
             Console.ReadLine();
 
 

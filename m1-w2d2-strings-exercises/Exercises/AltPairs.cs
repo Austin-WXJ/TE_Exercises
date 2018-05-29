@@ -16,7 +16,23 @@ namespace Exercises
          */
         public string AltPairs(string str)
         {
-            return null;
+            string altPairs = str;
+            string result = "";
+
+            for (int i = 0; i < altPairs.Length; i += 4)
+            {
+                result = String.Concat(result, altPairs.Substring(i, 1));
+
+                if (i + 1 < altPairs.Length)
+                {
+                    result = String.Concat(result, altPairs.Substring(i + 1, 1));
+                    // concatenating a string instead of building an array
+                    //see if altPairs.Substring to see if i+1 is still less than altPairs.Substring and if is take in one more character
+                }
+            }
+            return result;
+            //return null;
+
         }
     }
 }

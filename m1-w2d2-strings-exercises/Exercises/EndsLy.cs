@@ -16,7 +16,16 @@ namespace Exercises
          */
         public bool EndsLy(string str)
         {
-            return false;
+            bool answer = false;
+            str.ToLower();
+           
+            int lyEnd = str.IndexOf("ly");
+
+            if (lyEnd == (str.Length-2))
+            {
+                answer = true;
+            }
+            return answer;
         }
     }
 }

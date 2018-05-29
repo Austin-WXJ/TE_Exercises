@@ -18,7 +18,17 @@ namespace Exercises
         */
         public string ComboString(string a, string b)
         {
-            return null;
+            string comboString = "";
+
+            if (a.Length < b.Length)
+            {
+                comboString = string.Concat(a, b, a);
+            }
+            else
+            {
+                comboString = string.Concat(b, a, b);
+            }
+            return comboString;
         }
     }
 }

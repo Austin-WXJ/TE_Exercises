@@ -19,7 +19,7 @@ namespace Exercises
             bool answer = false;
             for (int i = 0; i < str.Length; i++)
             {
-               // if(str[i] = "x")
+                //if(str[i] = "x")
                 {
                 answer = str.Contains("xx");
                 }

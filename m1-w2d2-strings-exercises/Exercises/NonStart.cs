@@ -17,7 +17,9 @@ namespace Exercises
          */
         public string NonStart(string a, string b)
         {
-            return null;
+            string answer = string.Concat(a.Substring(1), b.Substring(1));
+            //return null;
+            return answer;
         }
     }
 }

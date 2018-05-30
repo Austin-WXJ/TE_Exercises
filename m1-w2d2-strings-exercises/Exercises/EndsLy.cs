@@ -17,14 +17,18 @@ namespace Exercises
         public bool EndsLy(string str)
         {
             bool answer = false;
-            str.ToLower();
-           
-            int lyEnd = str.IndexOf("ly");
+            string str2 = str.ToLower();
+            int lyEnd = str2.IndexOf("ly");
 
-            if (lyEnd == (str.Length-2))
+            if (str.Length >= 2)
             {
-                answer = true;
+                if (lyEnd == (str2.Length - 2))
+                {
+                    answer = true;
+                }
+
             }
+
             return answer;
         }
     }

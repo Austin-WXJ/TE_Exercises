@@ -17,7 +17,10 @@ namespace Exercises
          */
         public string StringYak(string str)
         {
-            return null;
+            string answer = "";
+
+            //return null;
+            return answer;
         }
     }
 }

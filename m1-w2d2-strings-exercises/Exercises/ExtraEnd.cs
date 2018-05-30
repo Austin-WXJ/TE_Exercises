@@ -17,7 +17,20 @@ namespace Exercises
          */
         public string ExtraEnd(string str)
         {
-            return null;
+            string extraEnds = "";
+
+            if (str.Length > 2)
+            {
+                extraEnds = string.Concat(
+                    str[str.Length - 2], str[str.Length - 1],
+                    str[str.Length - 2], str[str.Length - 1], 
+                    str[str.Length - 2], str[str.Length - 1]);
+            }
+            else if (str.Length <= 2)
+            {
+                extraEnds = string.Concat(str, str, str);
+            }
+            return extraEnds;
         }
     }
 }

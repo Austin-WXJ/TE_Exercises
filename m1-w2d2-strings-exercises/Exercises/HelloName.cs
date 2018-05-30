@@ -16,7 +16,9 @@ namespace Exercises
          */
         public string HelloName(string name)
         {
-            return null;
+            string answer = "Hello " + name + "!";
+            return answer;
+            //return null;
         }
 
     }

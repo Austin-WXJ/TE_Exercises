@@ -17,7 +17,10 @@ namespace Exercises
          */
         public string Left2(string str)
         {
-            return null;
+            string answer = "";
+
+            return answer;
+            //return null;
         }
     }
 }

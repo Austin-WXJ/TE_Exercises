@@ -18,7 +18,17 @@ namespace Exercises
          */
         public string FirstTwo(string str)
         {
-            return null;
+            string firstTwo = "";
+
+            if (str.Length > 2)
+            {
+                firstTwo = string.Concat(str[0], str[1]);
+            }
+            else
+            {
+                firstTwo = str;
+            }
+            return firstTwo;
         }
     }
 }

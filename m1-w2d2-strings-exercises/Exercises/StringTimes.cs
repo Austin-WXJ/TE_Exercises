@@ -16,7 +16,15 @@ namespace Exercises
          */
         public string StringTimes(string str, int n)
         {
-            return null;
+            string[] answer = new string[n];
+            string answer2 = "";
+            for (int i = 0; i < n; i++)
+            {
+                answer[i] = str;
+            }
+            answer2 = string.Concat(answer);
+            //return null;
+            return answer2;
         }
     }
 }

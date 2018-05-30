@@ -17,7 +17,10 @@ namespace Exercises
          */
         public int Last2(string str)
         {
-            return 0;
+            int answer = 0;
+
+            return answer;
+            //return 0;
         }
     }
 }

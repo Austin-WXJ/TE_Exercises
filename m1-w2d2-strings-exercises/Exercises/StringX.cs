@@ -9,7 +9,8 @@ namespace Exercises
     public partial class StringExercises
     {
         /*
-        Given a string, return a version where all the "x" have been removed. Except an "x" at the very start or end 
+        Given a string, return a version where all the "x" have been removed. 
+        Except an "x" at the very start or end 
         should not be removed.
         stringX("xxHxix") → "xHix"
         stringX("abxxxcd") → "abcd"
@@ -17,7 +18,21 @@ namespace Exercises
         */
         public string StringX(string str)
         {
-            return null;
+            string noX = "";
+            string answer = "";
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if ()
+                {
+                    answer += string.Concat(str[i]);
+
+                }
+
+            }
+
+            //return null;
+            return answer;
         }
     }
 }

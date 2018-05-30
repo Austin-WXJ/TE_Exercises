@@ -22,7 +22,7 @@ namespace Exercises
             int answer = 0;
             for (int i = 0; i < str.Length - 2; i++)
             {
-                if (str.Substring(i, 1) == str.Substring(i + 1, 1))
+                if (str.Substring(i, 2) == str.Substring(str.Length-2, 2))
                 {
                     answer++;
                 }

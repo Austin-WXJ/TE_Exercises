@@ -9,7 +9,8 @@ namespace Exercises
     public partial class StringExercises
     {
         /*
-         Given a string, return a "rotated left 2" version where the first 2 chars are moved to the end. 
+         Given a string, return a "rotated left 2" version where the first 2 chars are
+         moved to the end. 
          The string length will be at least 2.
          left2("Hello") → "lloHe"
          left2("java") → "vaja"
@@ -18,6 +19,10 @@ namespace Exercises
         public string Left2(string str)
         {
             string answer = "";
+            string strFront = str.Substring(0, 2);
+            string strEnd = str.Substring(2, str.Length - 2);
+            answer = string.Concat(strEnd, strFront);
+            //answer = string.Concat(str.Substring(2, str.Length - 2), str.Substring(0, 2));
 
             return answer;
             //return null;

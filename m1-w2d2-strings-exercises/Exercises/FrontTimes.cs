@@ -19,23 +19,24 @@ namespace Exercises
          */
         public string FrontTimes(string str, int n)
         {
-            //string answer = "";
-            //string[] tempStringArray = new string[n];
-            //int lengthOfStr = 3;
+            string answer = "";
+            if (str.Length >= 3)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    answer += str.Substring(0, 3);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    answer += str.Substring(0, str.Length);
+                }
+            }
 
-            //if (str.Length < 3)
-            //{
-            //    lengthOfStr = str.Length;
-            //}
-
-            //for (int i = 0; i < lengthOfStr; i++)
-            //{
-            //    tempStringArray[i] = str.Substring(0, lengthOfStr);
-            //}
-
-            //answer = string.Concat(tempStringArray);
-            //return answer;
-            return null;
+            //return null;
+            return answer;
         }
 
     }

@@ -31,8 +31,8 @@ namespace Exercises
 
             //}
 
-            //return null;
-            return answer;
+            return null;
+            //return answer;
         }
     }
 }

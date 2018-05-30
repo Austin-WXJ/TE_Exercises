@@ -19,14 +19,14 @@ namespace Exercises
         {
             int answer = 0;
 
-            for (int i = 0; i < str.Length-1; i++)
+            for (int i = 0; i < str.Length - 1; i++)
             {
                 if (str.Substring(i, 2) == "xx")
                 {
                     answer++;
                 }
             }
-            //return 0;
+            return 0;
             return answer;
         }
     }

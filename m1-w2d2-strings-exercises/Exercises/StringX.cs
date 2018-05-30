@@ -18,18 +18,18 @@ namespace Exercises
         */
         public string StringX(string str)
         {
-            string noX = "";
             string answer = "";
+            //string noX = "";
 
-            for (int i = 0; i < str.Length; i++)
-            {
-                if ()
-                {
-                    answer += string.Concat(str[i]);
+            //for (int i = 0; i < str.Length; i++)
+            //{
+            //    if ()
+            //    {
+            //        answer += string.Concat(str[i]);
 
-                }
+            //    }
 
-            }
+            //}
 
             //return null;
             return answer;

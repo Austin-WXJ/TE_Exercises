@@ -20,6 +20,12 @@ namespace Exercises
          */
         public List<int> BoardingGate(List<int> seatNumberList)
         {
+            //List<int> result = new List<int>();
+            //foreach (int seat in seatNumberList)
+            //{
+            //    result.Add(seat);
+            //}
+            //return result;
             return null;
         }
     }

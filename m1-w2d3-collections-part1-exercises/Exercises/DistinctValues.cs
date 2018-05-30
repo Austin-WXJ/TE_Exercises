@@ -16,8 +16,18 @@ namespace Exercises
          */
         public List<string> DistinctValues(List<string> stringList)
         {
+            List<string> result = new List<string>();
 
-            return null;
+            foreach (string value in stringList)
+            {
+                if (result.Contains(value) == false) //if value is not in result, add value, if value is already in list skip
+                {
+                    result.Add(value);
+                }
+            }
+            
+            return result;
+            //return null;
         }
     }
 }

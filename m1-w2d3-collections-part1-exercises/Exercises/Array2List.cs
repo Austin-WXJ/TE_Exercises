@@ -16,13 +16,26 @@ namespace Exercises
          */
         public List<string> Array2List(string[] stringArray)
         {
-            List<string> result = new List<string>();
-            foreach (string word in stringArray)
+            //List<string> result = new List<string>();
+            //HashSet<string> answerSet = new HashSet<string>();
+            List<string> answerSet = new List<string>();
+
+            //foreach ( string fruit in stringArray)
+            //{
+            //    // for each 
+            //    answerSet.Add(fruit);
+            //}
+            for (int i = 0; i< stringArray.Length; ++i)
             {
-                result.Add(word);
+                if (!answerSet.Contains(answerSet[i]))
+                {
+                    answerSet[i] = stringArray[i];
+                }
             }
-            return result;
+
+
             //return null;
+            return answerSet;
         }
 
     }

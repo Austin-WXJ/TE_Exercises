@@ -20,19 +20,34 @@ namespace Exercises
             //HashSet<string> answerSet = new HashSet<string>();
             List<string> answerSet = new List<string>();
 
-            //foreach ( string fruit in stringArray)
+            ////////////////////
+            //foreach loop
+            ////////////////////
+
+
+            //foreach (string fruit in stringArray)
             //{
-            //    // for each 
             //    answerSet.Add(fruit);
             //}
-            for (int i = 0; i< stringArray.Length; ++i)
-            {
-                if (!answerSet.Contains(answerSet[i]))
-                {
-                    answerSet[i] = stringArray[i];
-                }
-            }
 
+
+            ////////////////////
+            //foreach loop
+            ////////////////////
+
+            //for (int i = 0; i < stringArray.Length; i++)
+            //{
+            //    if (!answerSet.Contains(stringArray[i]))
+            //    {
+            //        answerSet.Add(stringArray[i]);
+            //    }
+            //}
+
+            ////////////////////
+            //no loop
+            ////////////////////
+
+            answerSet.AddRange(stringArray);
 
             //return null;
             return answerSet;

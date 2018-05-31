@@ -38,7 +38,34 @@ namespace Exercises
          */
         public string AnimalGroupName(string animalName)
         {
-            return null;
+            //create a dictionary
+            Dictionary<string, string> animalGroups = new Dictionary<string, string>
+            {
+                {"GIRAFFE", "Tower"},
+                {"RHINO", "Crash" },
+                {"LION", "Pride"},
+                //{"ELEPHANT", "Herd"},
+                //{"CROW", "Murder"},
+                //{"PIGEON", "Kit"},
+                //{"FLAMINGO", "Pat"},
+                //{"DEER", "Herd"},
+                //{"DOG", "Pack"},
+                //{"CROCODILE", "Float"}
+
+            };
+
+            //if (animalGroups.ContainsKey(animalName.ToUpper()))
+            //{
+            //    return animalGroups[animalName.ToUpper()];
+            //}
+
+            var key = animalName.ToUpper();
+
+            //return null;
+            return animalGroups.ContainsKey(key) ?
+                animalGroups[key] :
+                "unknown";
+
         }
     }
 }

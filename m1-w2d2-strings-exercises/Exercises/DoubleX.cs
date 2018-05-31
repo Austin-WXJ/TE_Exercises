@@ -20,7 +20,7 @@ namespace Exercises
             bool answer = false;
             for (int i = 0; i < str.Length - 1; i++)
             {
-                if (str.Substring(i, 1) == "x" && str.Substring(i, 2) == "xx")
+                if (str.Substring(i, 2) == "xx")//str.Substring(i, 1) == "x" && 
                 {
                     answer = true;
                     break;

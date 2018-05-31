@@ -18,21 +18,22 @@ namespace Exercises
         */
         public string StringX(string str)
         {
-            string answer = "";
-            //string noX = "";
+            //string answer = "";
 
-            //for (int i = 0; i < str.Length; i++)
-            //{
-            //    if ()
-            //    {
-            //        answer += string.Concat(str[i]);
-
-            //    }
-
-            //}
-
-            return null;
-            //return answer;
+            string result = str;
+            // check if first char is x and if str contains x and str length is greater than 1
+            if (str.IndexOf('x') == 0 && str.Contains('x') == true && str.Length > 1)
+            {
+                result = ($"x{str.Replace("x", "")}x");
+            }
+            // if the first char is not x and string contains x 
+            else if (str.IndexOf("x") != 0 && str.Contains('x') == true && str.IndexOf("x") != str.Length-1)
+            {
+                result = str.Replace("x", "");
+            }
+                //return null;
+                return result;
         }
     }
 }
+

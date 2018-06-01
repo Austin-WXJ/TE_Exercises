@@ -18,7 +18,23 @@ namespace Exercises
          */
         public List<int> InterleaveLists(List<int> listOne, List<int> listTwo)
         {
-            return null;
+            List<int> zippered = new List<int>();
+
+            for (int i = 0; i < listOne.Count || i < listTwo.Count; ++i)
+            {
+                //zippered.Add(listOne[i]);
+                //zippered.Add(listTwo[i]);
+                if (i < listOne.Count)
+                {
+                    zippered.Add(listOne[i]);
+                }
+                if (i < listTwo.Count)
+                {
+                    zippered.Add(listTwo[i]);
+                }
+            }
+            return zippered;
+            //return null;
         }
     }
 }

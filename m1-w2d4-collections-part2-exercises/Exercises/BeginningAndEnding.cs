@@ -9,7 +9,8 @@ namespace Exercises
     public partial class Exercises
     {
         /*
-         * Given an array of non-empty strings, return a Dictionary<string, string> where for every different string in the array, 
+         * Given an array of non-empty strings, return a Dictionary<string, string>
+         * where for every different string in the array, 
          * there is a key of its first character with the value of its last character.
          *
          * beginningAndEnding(["code", "bug"]) → {"b": "g", "c": "e"}
@@ -18,7 +19,22 @@ namespace Exercises
          */
         public Dictionary<string, string> BeginningAndEnding(string[] words)
         {
+            //
+            Dictionary<string, List<string>> wordEnds = new Dictionary<string, List<string>>
+            {
+                //{ "bug", "b", "g" },
+                //{ "code", },
+                //{ "good",  "" },
+                //{ "main",  "" },
+                //{ "man",  "" },
+                //{ "moat",  "" },
+                //{ "moon",  "" },
+                //{ "muddy",  "" },
+                //{ "night",  "" },
+            };
+            //var key = 
             return null;
+            //return wordEnds;
         }
     }
 }

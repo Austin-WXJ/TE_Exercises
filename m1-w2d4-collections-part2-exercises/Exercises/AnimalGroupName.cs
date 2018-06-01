@@ -41,16 +41,17 @@ namespace Exercises
             //create a dictionary
             Dictionary<string, string> animalGroups = new Dictionary<string, string>
             {
+
                 {"GIRAFFE", "Tower"},
                 {"RHINO", "Crash" },
                 {"LION", "Pride"},
-                //{"ELEPHANT", "Herd"},
-                //{"CROW", "Murder"},
-                //{"PIGEON", "Kit"},
-                //{"FLAMINGO", "Pat"},
-                //{"DEER", "Herd"},
-                //{"DOG", "Pack"},
-                //{"CROCODILE", "Float"}
+                {"ELEPHANT", "Herd"},
+                {"CROW", "Murder"},
+                {"PIGEON", "Kit"},
+                {"FLAMINGO", "Pat"},
+                {"DEER", "Herd"},
+                {"DOG", "Pack"},
+                {"CROCODILE", "Float"}
 
             };
 

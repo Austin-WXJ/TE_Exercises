@@ -22,10 +22,37 @@ namespace Exercises
          *  
          * last2Revisited(["hixxhi", "xaxxaxaxx", "axxxaaxx"]) → {"hixxhi": 1, "xaxxaxaxx": 1, "axxxaaxx": 2}
          * 
+         * *******************************************************************************
+                             public int Last2(string str)
+                    {
+                        int answer = 0;
+                        for (int i = 0; i < str.Length - 2; i++)
+                        {
+                            if (str.Substring(i, 2) == str.Substring(str.Length-2, 2))
+                            {
+                                answer++;
+                            }
+                        }
+                        return answer;
+         * *******************************************************************************
+         * wordEnds[word[0].ToString()] = word[word.Length-1].ToString();
+         * *******************************************************************************
          */
         public Dictionary<string, int> Last2Revisted(string[] words)
         {
-            return null;
+            Dictionary<string, int> last2Dictionary = new Dictionary<string, int>();
+
+            foreach (string word in words)
+            {
+                last2Dictionary[word] = 0;
+                for (int i = 0; i < word.Length - 2; i++)
+                    if (word.Substring(i, 2) == word.Substring(word.Length - 2, 2))
+                    {
+                        last2Dictionary[word]++;
+                    }
+            }
+            return last2Dictionary;
+            //return null;
         }
     }
 }

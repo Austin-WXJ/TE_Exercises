@@ -21,18 +21,22 @@ namespace Exercises
          * 
          */
         public Dictionary<string, int> ConsolidateInventory(
-            Dictionary<string, int> mainWarehouse,
-            Dictionary<string, int> remoteWarehouse)
+                        Dictionary<string, int> mainWarehouse, 
+                            Dictionary<string, int> remoteWarehouse)
         {
             Dictionary<string, int> combinedDictionaries = new Dictionary<string, int>(mainWarehouse);
 
 
             foreach (KeyValuePair<string, int> kvp in remoteWarehouse)
             {
-                if (mainWarehouse[kvp.Key] == remoteWarehouse[kvp.Key])
+                if (!combinedDictionaries.ContainsKey(kvp.Key))
                 {
                     // add new key value to the existing somehow
-                    combinedDictionaries[kvp.Key] += kvp.Value; //does not combine values
+                    combinedDictionaries.Add(kvp.Key, kvp.Value); //does not combine values
+                }
+                else
+                {
+                    combinedDictionaries[kvp.Key] += kvp.Value;
                 }
 
             }

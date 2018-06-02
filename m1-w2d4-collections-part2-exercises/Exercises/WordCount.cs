@@ -20,6 +20,7 @@ namespace Exercises
          * wordCount(["c", "b", "a"]) → {"b": 1, "c": 1, "a": 1}
          * 
          */
+
         public Dictionary<string, int> WordCount(string[] words)
         {
             Dictionary<string, int> wordDictCount = new Dictionary<string, int>();

@@ -19,7 +19,6 @@ namespace Exercises
          */
         public Dictionary<string, string> BeginningAndEnding(string[] words)
         {
-            //
             Dictionary<string, string> wordEnds = new Dictionary<string, string>();
 
             foreach (string word in words)

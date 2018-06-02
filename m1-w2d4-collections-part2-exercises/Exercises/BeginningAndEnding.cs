@@ -20,21 +20,14 @@ namespace Exercises
         public Dictionary<string, string> BeginningAndEnding(string[] words)
         {
             //
-            Dictionary<string, List<string>> wordEnds = new Dictionary<string, List<string>>
+            Dictionary<string, string> wordEnds = new Dictionary<string, string>();
+
+            foreach (string word in words)
             {
-                //{ "bug", "b", "g" },
-                //{ "code", },
-                //{ "good",  "" },
-                //{ "main",  "" },
-                //{ "man",  "" },
-                //{ "moat",  "" },
-                //{ "moon",  "" },
-                //{ "muddy",  "" },
-                //{ "night",  "" },
-            };
-            //var key = 
-            return null;
-            //return wordEnds;
+                wordEnds[word[0].ToString()] = word[word.Length-1].ToString();
+            }
+            //return null;
+            return wordEnds;
         }
     }
 }

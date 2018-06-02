@@ -19,7 +19,28 @@ namespace Exercises
          */
         public Dictionary<string, bool> WordMultiple(string[] words)
         {
-            return null;
+            int countForEach = 0;
+            int countIf = 0;
+
+            Dictionary<string, Boolean> repeatChar = new Dictionary<string, Boolean>();
+
+            foreach (string word in words) //build dictionary key value pair
+            {
+                countForEach++;
+
+                if (!repeatChar.ContainsKey(word))//if repeatChar already contains key,
+                {
+                    countIf++;
+                    repeatChar[word] = false;// that key value switches to true
+                }
+                else
+                {
+                    repeatChar[word] = true;
+                }
+
+
+            }
+            return repeatChar;
         }
     }
 }

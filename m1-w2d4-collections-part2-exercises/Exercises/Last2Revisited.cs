@@ -23,6 +23,7 @@ namespace Exercises
          * last2Revisited(["hixxhi", "xaxxaxaxx", "axxxaaxx"]) → {"hixxhi": 1, "xaxxaxaxx": 1, "axxxaaxx": 2}
          * 
          * *******************************************************************************
+         * ----------------------COPIED FROM OLD EXERCISES----------------------
                              public int Last2(string str)
                     {
                         int answer = 0;
@@ -38,6 +39,7 @@ namespace Exercises
          * wordEnds[word[0].ToString()] = word[word.Length-1].ToString();
          * *******************************************************************************
          */
+
         public Dictionary<string, int> Last2Revisted(string[] words)
         {
             Dictionary<string, int> last2Dictionary = new Dictionary<string, int>();

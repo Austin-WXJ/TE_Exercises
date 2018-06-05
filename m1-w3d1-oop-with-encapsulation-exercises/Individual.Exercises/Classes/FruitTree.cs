@@ -10,15 +10,15 @@ namespace Individual.Exercises.Classes
     {
         //Variables
         public string typeOfFruit = "";
-        //private int startingPiecesOfFruit = 0;
-        //private int numberOfPiecesToRemove;
+        private int startingPiecesOfFruit = 0;
+        private int numberOfPiecesToRemove;
         public int piecesOfFruitLeft = 0;
-        private bool pickFruit = false;
+        private bool pickFruit = true;
 
         //Constructors
-        public FruitTree(int startingPiecesOfFruit, string typeOfFruit)
+        public FruitTree(string typeOfFruit, int startingPiecesOfFruit)
         {
-            this.startingPiecesOfFruit = startingPiecesOfFruit;
+            PiecesOfFruitLeft = startingPiecesOfFruit;
             this.typeOfFruit = typeOfFruit;
         }
 
@@ -32,33 +32,15 @@ namespace Individual.Exercises.Classes
             }
 
         }
-        public int startingPiecesOfFruit
-        {
-            get
-            {
-                return startingPiecesOfFruit;
-            }
-            set
-            {
-                //startingPiecesOfFruit = value;
-                piecesOfFruitLeft = value;
-            }
 
-        }
-
-
-        private int PiecesOfFruitLeft
+        public int PiecesOfFruitLeft
         {
             get
             {
                 return piecesOfFruitLeft;
             }
-            set
+            private set
             {
-                if (pickFruit == true)
-                {
-                    piecesOfFruitLeft--;
-                }
                 piecesOfFruitLeft = value;
             }
         }
@@ -66,9 +48,15 @@ namespace Individual.Exercises.Classes
         //Methods
         public bool PickFruit(int numberOfPiecesToRemove)
         {
-            if (piecesOfFruitLeft == 0 || numberOfPiecesToRemove > 0)
+            if (piecesOfFruitLeft == 0)
             {
-                pickFruit = true;
+                pickFruit = false;
+            }
+
+            else if (numberOfPiecesToRemove > 0)
+            {
+                piecesOfFruitLeft -= numberOfPiecesToRemove;
+
             }
             return pickFruit;
         }

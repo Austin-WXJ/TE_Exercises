@@ -10,6 +10,7 @@ namespace Individual.Exercises
     {
         static void Main(string[] args)
         {
+            
         }
     }
 }

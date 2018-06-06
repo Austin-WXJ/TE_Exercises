@@ -53,6 +53,13 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AnimalGroupNameTest.cs" />
+    <Compile Include="CigarPartyTest.cs" />
+    <Compile Include="Lucky13Test.cs" />
+    <Compile Include="MaxEnds3Test.cs" />
+    <Compile Include="NonStartTest.cs" />
+    <Compile Include="SameFirstLastTest.cs" />
+    <Compile Include="StringBitsTest.cs" />
     <Compile Include="WordCountTests.cs" />
   </ItemGroup>
   <ItemGroup>

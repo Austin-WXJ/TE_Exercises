@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace BankTellerExercise.Classes
 {
-    class Class1
+    class CheckingAccount
     {
+        ///Instance Variables
+        
+
+        ///Properties
+        
+
+        ///Constructors
+        
+
+        ///Methods
+
+
     }
 }

@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BankTellerExercise
+namespace BankTellerExercise.Classes
 {
-    class Program
+    class SavingsAccount
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }

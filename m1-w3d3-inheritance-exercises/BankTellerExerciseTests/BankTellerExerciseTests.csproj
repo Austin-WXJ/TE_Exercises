@@ -53,6 +53,9 @@
   <ItemGroup>
     <Compile Include="Classes\UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BankAccountTest.cs" />
+    <Compile Include="CheckingAccountTest.cs" />
+    <Compile Include="SavingsAccountTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BankTellerExercise\BankTellerExercise.csproj">

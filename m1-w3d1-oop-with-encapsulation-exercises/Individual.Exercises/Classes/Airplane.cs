@@ -10,8 +10,7 @@ namespace Individual.Exercises.Classes
     {
         //Variables
         private string planeNumber;
-        private int bookedFirstClassSeats;
-        private int availableFirstClassSeats;
+        private int bookedFirstClassSeats = 0;
         private int totalFirstClassSeats;
         private int bookedCoachSeats;
         private int availableCoachSeats;
@@ -32,6 +31,10 @@ namespace Individual.Exercises.Classes
             {
                 return bookedFirstClassSeats;
             }
+            private set
+            {
+                bookedFirstClassSeats = value;
+            }
 
         }
 
@@ -39,7 +42,7 @@ namespace Individual.Exercises.Classes
         {
             get
             {
-                return availableFirstClassSeats = totalFirstClassSeats - bookedFirstClassSeats;
+                return totalFirstClassSeats - bookedFirstClassSeats;
             }
         }
 
@@ -49,10 +52,10 @@ namespace Individual.Exercises.Classes
             {
                 return totalFirstClassSeats;
             }
-            private set
-            {
-                totalFirstClassSeats = value;
-            }
+            //private set
+            //{
+            //    totalFirstClassSeats = value;
+            //}
         }
 
         public int BookedCoachSeats
@@ -60,6 +63,10 @@ namespace Individual.Exercises.Classes
             get
             {
                 return bookedCoachSeats;
+            }
+            private set
+            {
+                bookedCoachSeats = value;
             }
 
         }
@@ -78,10 +85,7 @@ namespace Individual.Exercises.Classes
             {
                 return totalCoachSeats;
             }
-            private set
-            {
-                totalCoachSeats = value;
-            }
+
         }
 
         //Constructors
@@ -93,16 +97,20 @@ namespace Individual.Exercises.Classes
         }
 
         //Methods
-        public void ReservedSeats(bool forFirstClass, int totalNumberOfSeats)
+        public bool ReserveSeats(bool forFirstClass, int totalNumberOfSeats)
         {
-            if (forFirstClass == true)
+            bool canReserve = false;
+            if (forFirstClass == true && AvailableFirstClassSeats > totalNumberOfSeats)
             {
                 bookedFirstClassSeats += totalNumberOfSeats;
+                canReserve = true;
             }
-            else
+            else if (AvailableCoachSeats > totalNumberOfSeats)
             {
                 bookedCoachSeats += totalNumberOfSeats;
+                canReserve = true;
             }
+            return canReserve;
         }
     }
 }

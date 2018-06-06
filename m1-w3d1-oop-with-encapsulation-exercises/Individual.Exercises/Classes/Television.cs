@@ -55,8 +55,6 @@ namespace Individual.Exercises.Classes
             }
         }
 
-
-
         //Constructors 
 
         //Methods

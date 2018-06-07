@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BankTellerExerciseTests
+namespace BankTellerExercise.Tests
 {
     [TestClass]
-    public class SavingsAccountTest
+    public class CheckingAccountTest
     {
         [TestMethod]
         public void TestMethod1()

@@ -13,7 +13,10 @@ namespace BankTellerExercise.Classes
         ///
 
         //Instance Variables
-        private int accountBalanceUSD;
+        private decimal accountBalanceUSD;
+        private int accountNumber;
+        private int destinationAccount;
+        private decimal transferAmount;
 
         ///Properties
         ///| Property Name | Data Type | Get | Set | Description                                             |
@@ -43,15 +46,15 @@ namespace BankTellerExercise.Classes
         ///| Transfer(BankAccount destinationAccount, decimal transferAmount) | void        | Withdraws `transferAmount` from this account and deposits it into `destinationAccount`.               |
         public decimal Deposit(decimal ammountToDeposit)
         {
-
+            return accountBalanceUSD += ammountToDeposit;
         }
         public decimal Withdraw(decimal amountToWithdraw)
         {
-
+            return accountBalanceUSD -= amountToWithdraw;
         }
         public void Transfer(BankAccount destinationAccount, decimal transferAmount)
         {
-
+            this.transferAmount = accountBalanceUSD - transferAmount;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankTellerExercise.Classes
 {
-    class BankAccount
+    public class BankAccount
     {
         ///The BankAccount class represents a simple checking or savings account at a bank.
         ///The balance is represented in USD using the DollarAmount type.

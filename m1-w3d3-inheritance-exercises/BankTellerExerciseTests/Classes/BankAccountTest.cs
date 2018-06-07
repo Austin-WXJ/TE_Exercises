@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using BankTellerExercise.Classes;
 
 namespace BankTellerExerciseTests.Classes
 {
@@ -11,7 +12,8 @@ namespace BankTellerExerciseTests.Classes
         [TestMethod]
         public void BankAccount()
         {
-            //BankAccount testBankAccount = new BankAccount();
+            BankAccount testBankAccount = new BankAccount();
+            
         }
 
         [TestMethod]

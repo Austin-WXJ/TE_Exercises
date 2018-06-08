@@ -6,23 +6,27 @@ using System.Threading.Tasks;
 
 namespace BankTellerExercise.Classes
 {
-    class CheckingAccount : BankAccount
+    public class CheckingAccount : BankAccount
     {
-        ///Instance Variables
 
+        //Methods
 
-        ///Properties
+        public override decimal Withdraw(decimal amountToWithdraw)
+        {
+            if (Balance <= -100)
+            {
+                return Balance;
+            }
+            else if (Balance <= 0)
+            {
+                return base.Withdraw(amountToWithdraw + 10M);
+            }
+            else
+            {
+                return base.Withdraw(amountToWithdraw);
+            }
+        }
 
-
-        ///Constructors
-
-
-        ///Methods
-        ///| Withdraw override case 1| If the balance falls below $0.00                          |
-        ///                          | a $10.00 overdraft fee is also withdrawn from the account.|
-        ///| Withdraw override case 1| Checking account cannot be more than $100.00 overdrawn.   |
-        ///                          | If a withdrawal is requested leaving the account more     |
-        ///                          |than $100.00, it fails and the balance remains the same.   |
 
 
     }

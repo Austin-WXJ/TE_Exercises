@@ -9,51 +9,51 @@ namespace BankTellerExerciseTests.Classes
     public class BankAccountTest
     {
         BankAccount testBankAccount = new BankAccount();
+        BankAccount testBankAccountTwo = new BankAccount();
 
         [TestInitialize]
         public void Initialize()
         {
             testBankAccount = new BankAccount();
+            testBankAccountTwo = new BankAccount();
         }
+
         [TestMethod]
-        public void AccountNumber()
+        public void BankAccount_Constructor()
         {
             Assert.AreEqual(null, testBankAccount.AccountNumber);
-            testBankAccount.AccountNumber = "ABC123";
-            Assert.AreEqual("ABC123", testBankAccount.AccountNumber);
+
+            string testAccountNumber = testBankAccount.AccountNumber = "ABC123";
+            string testAccountTwoNumber = testBankAccountTwo.AccountNumber = "XYZ456";
+
+            Assert.AreEqual(testAccountNumber, testBankAccount.AccountNumber);
+            Assert.AreEqual(testAccountTwoNumber, testBankAccountTwo.AccountNumber);
+
+            Assert.AreEqual(0.0M, testBankAccount.Balance);
         }
 
         [TestMethod]
-        public void BankAccount()
+        public void BankAccount_Deposit()
         {
-            Assert.AreEqual(0M, testBankAccount.Balance);
-            testBankAccount.Deposit(200M);
-            Assert.AreNotEqual(2M, testBankAccount.Balance);
-            Assert.AreEqual(200M, testBankAccount.Balance);
-        }
+            testBankAccount.Deposit(123.5M);
 
-        [TestMethod]
-        public void Deposit()
-        {
-            
-            testBankAccount.Deposit(5M);
-            Assert.AreNotEqual(20.5M, testBankAccount.Balance);
-            Assert.AreEqual(205M, testBankAccount.Balance);
+            Assert.AreEqual(123.5M, testBankAccount.Balance);
 
         }
         [TestMethod]
-        public void Withdraw()
+        public void BankAccount_Withdraw()
         {
-            testBankAccount.Deposit(5M);
-            Assert.AreNotEqual(20.5M, testBankAccount.Balance);
-            Assert.AreEqual(205M, testBankAccount.Balance);
-
+            testBankAccount.Withdraw(123.5M);
+            Assert.AreEqual(-123.5M, testBankAccount.Balance);
         }
         [TestMethod]
-        public void Transfer()
+        public void BankAccount_Transfer()
         {
-            
+            testBankAccount.Deposit(500M);
+            testBankAccount.Transfer(testBankAccountTwo, 123M);
 
+            Assert.AreEqual(377M, testBankAccount.Balance);
+            Assert.AreEqual(123M, testBankAccountTwo.Balance);
         }
 
     }

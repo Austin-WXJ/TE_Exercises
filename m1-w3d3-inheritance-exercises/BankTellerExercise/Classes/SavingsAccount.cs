@@ -18,10 +18,18 @@ namespace BankTellerExercise.Classes
 
         ///Methods
 
-        //public decimal Withdraw(decimal amountToWithdraw)
-        //{
-        //    return Balance -= amountToWithdraw;
-        //}
+        public override decimal Withdraw(decimal amountToWithdraw)
+        {
+            if (Balance <= amountToWithdraw)
+            {
+                return Balance;
+            }
+            else if (Balance < 150)
+            {
+                return base.Withdraw(amountToWithdraw + 2M);
+            }
+            return base.Withdraw(amountToWithdraw);
+        }
 
     }
 }

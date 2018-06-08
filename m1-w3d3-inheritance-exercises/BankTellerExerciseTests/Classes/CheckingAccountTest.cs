@@ -10,64 +10,58 @@ namespace BankTellerExerciseTests.Classes
     public class CheckingAccountTest
     {
         CheckingAccount testCheckingAccount = new CheckingAccount();
+        CheckingAccount testCheckingAccountTwo = new CheckingAccount();
 
         [TestInitialize]
         public void Initialize()
         {
             testCheckingAccount = new CheckingAccount();
+            testCheckingAccountTwo = new CheckingAccount();
         }
 
         [TestMethod]
-        public void CheckingAccountNumber()
+        public void CheckingAccount_Constructor()
         {
             Assert.AreEqual(null, testCheckingAccount.AccountNumber);
-            testCheckingAccount.AccountNumber = "ABC123";
-            Assert.AreEqual("ABC123", testCheckingAccount.AccountNumber);
+
+            string testAccountNumber = testCheckingAccount.AccountNumber = "ABC123";
+            string testAccountTwoNumber = testCheckingAccountTwo.AccountNumber = "XYZ456";
+
+            Assert.AreEqual(testAccountNumber, testCheckingAccount.AccountNumber);
+            Assert.AreEqual(testAccountTwoNumber, testCheckingAccountTwo.AccountNumber);
+
+            Assert.AreEqual(0.0M, testCheckingAccount.Balance);
         }
 
         [TestMethod]
-        public void CheckingAccount()
+        public void CheckingAccount_Deposit()
         {
-            //BankAccount testBankAccount = new BankAccount();
+            testCheckingAccount.Deposit(123.5M);
 
-            Assert.AreEqual(0M, testCheckingAccount.Balance);
-            testCheckingAccount.Deposit(200M);
-            Assert.AreNotEqual(2M, testCheckingAccount.Balance);
-            Assert.AreEqual(200M, testCheckingAccount.Balance);
-        }
-
-        [TestMethod]
-        public void CheckingDeposit()
-        {
-
-            testCheckingAccount.Deposit(5M);
-            Assert.AreNotEqual(500M, testCheckingAccount.Balance);
-            Assert.AreEqual(5M, testCheckingAccount.Balance);
+            Assert.AreEqual(123.5M, testCheckingAccount.Balance);
 
         }
         [TestMethod]
-        public void CheckingWithdraw()
+        public void CheckingAccount_Withdraw()
         {
-            testCheckingAccount.Withdraw(5M);
-            Assert.AreEqual(-15M, testCheckingAccount.Balance);
-            testCheckingAccount = new CheckingAccount();
-            Assert.AreEqual(-110,testCheckingAccount.Withdraw(100));
-            Assert.AreEqual(-110, testCheckingAccount.Withdraw(10));
-        }
-        [TestMethod]
-        public void CheckingWithdrawOverDraft()
-        {
-            testCheckingAccount.Withdraw(5M);
-            Assert.AreNotEqual(20.5M, testCheckingAccount.Balance);
-            Assert.AreEqual(-5M, testCheckingAccount.Balance);
+            testCheckingAccount.Withdraw(123.5M);
+            Assert.AreEqual(-133.5M, testCheckingAccount.Balance);
+            testCheckingAccount.Withdraw(1M);
+            Assert.AreEqual(-133.5M, testCheckingAccount.Balance);
+            testCheckingAccount.Deposit(1000M);
+            Assert.AreEqual(866.5M, testCheckingAccount.Balance);
+            testCheckingAccount.Withdraw(60.5M);
+            Assert.AreEqual(806.0M, testCheckingAccount.Balance);
 
         }
         [TestMethod]
-        public void CheckingTransfer()
+        public void CheckingAccount_Transfer()
         {
+            testCheckingAccount.Deposit(500M);
+            testCheckingAccount.Transfer(testCheckingAccountTwo, 123M);
 
-
+            Assert.AreEqual(377M, testCheckingAccount.Balance);
+            Assert.AreEqual(123M, testCheckingAccountTwo.Balance);
         }
-
     }
 }

@@ -8,9 +8,7 @@ namespace BankTellerExercise.Classes
 {
     public class CheckingAccount : BankAccount
     {
-
         //Methods
-
         public override decimal Withdraw(decimal amountToWithdraw)
         {
             if (Balance <= -100)
@@ -26,8 +24,5 @@ namespace BankTellerExercise.Classes
                 return base.Withdraw(amountToWithdraw);
             }
         }
-
-
-
     }
 }

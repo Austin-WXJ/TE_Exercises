@@ -8,16 +8,7 @@ namespace BankTellerExercise.Classes
 {
     public class SavingsAccount : BankAccount
     {
-        //Instance Variables
-
-        //Properties
-
-
-        ///Constructors
-
-
         ///Methods
-
         public override decimal Withdraw(decimal amountToWithdraw)
         {
             if (Balance <= amountToWithdraw)
@@ -30,6 +21,5 @@ namespace BankTellerExercise.Classes
             }
             return base.Withdraw(amountToWithdraw);
         }
-
     }
 }

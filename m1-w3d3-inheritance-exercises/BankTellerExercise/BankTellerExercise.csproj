@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\BankAccount.cs" />
+    <Compile Include="Classes\BankCustomer.cs" />
     <Compile Include="Classes\CheckingAccount.cs" />
     <Compile Include="Classes\SavingsAccount.cs" />
     <Compile Include="MainBankTeller.cs" />

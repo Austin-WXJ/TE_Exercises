@@ -44,7 +44,7 @@ namespace BankTellerExerciseTests.Classes
         [TestMethod]
         public void BankAccount_Transfer()
         {
-            
+
             BankAccount testBankAccountTwo = new BankAccount();
             testBankAccount.Deposit(500M);
             testBankAccount.Transfer(testBankAccountTwo, 123M);

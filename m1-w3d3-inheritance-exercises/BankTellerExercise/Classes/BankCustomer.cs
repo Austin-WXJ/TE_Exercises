@@ -26,7 +26,20 @@ namespace BankTellerExercise.Classes
             }
         }
 
-        public bool IsVIP { get; set; }
+        public bool IsVIP
+        {
+            get
+            {
+                if ((int)Accounts.Sum(Accounts => Accounts.Balance) > 25000)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
 
         //Constructor
         public BankCustomer(string name, string address, string phoneNumber)
@@ -39,7 +52,8 @@ namespace BankTellerExercise.Classes
         //Methods
         public void AddAccount(BankAccount newAccount)
         {
-            accountList.Add(newAccount);// add into accounts array
+            accountList.Add(newAccount);
         }
     }
 }
+

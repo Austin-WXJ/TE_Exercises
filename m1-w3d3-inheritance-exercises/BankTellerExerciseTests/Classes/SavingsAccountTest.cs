@@ -10,13 +10,11 @@ namespace BankTellerExerciseTests.Classes
     public class SavingsAccountTest
     {
         SavingsAccount testSavingsAccount = new SavingsAccount();
-        SavingsAccount testSavingsAccountTwo = new SavingsAccount();
 
         [TestInitialize]
         public void Initialize()
         {
             testSavingsAccount = new SavingsAccount();
-            testSavingsAccountTwo = new SavingsAccount();
         }
 
         [TestMethod]
@@ -25,10 +23,9 @@ namespace BankTellerExerciseTests.Classes
             Assert.AreEqual(null, testSavingsAccount.AccountNumber);
 
             string testAccountNumber = testSavingsAccount.AccountNumber = "ABC123";
-            string testAccountTwoNumber = testSavingsAccountTwo.AccountNumber = "XYZ456";
+
 
             Assert.AreEqual(testAccountNumber, testSavingsAccount.AccountNumber);
-            Assert.AreEqual(testAccountTwoNumber, testSavingsAccountTwo.AccountNumber);
 
             Assert.AreEqual(0.0M, testSavingsAccount.Balance);
         }
@@ -59,6 +56,7 @@ namespace BankTellerExerciseTests.Classes
         [TestMethod]
         public void SavingsAccount_Transfer()
         {
+            SavingsAccount testSavingsAccountTwo = new SavingsAccount();
             testSavingsAccount.Deposit(500M);
             testSavingsAccount.Transfer(testSavingsAccountTwo, 123M);
 

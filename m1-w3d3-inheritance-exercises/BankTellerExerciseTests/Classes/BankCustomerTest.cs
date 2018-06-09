@@ -1,6 +1,7 @@
 ﻿using System;
 using BankTellerExercise.Classes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 
 namespace BankTellerExerciseTests.Classes
 {
@@ -10,6 +11,7 @@ namespace BankTellerExerciseTests.Classes
         BankCustomer testCustomer = new BankCustomer("", "", "");
         BankAccount testAccount1 = new SavingsAccount();
         BankAccount testAccount2 = new CheckingAccount();
+        BankAccount testAccount3 = new CheckingAccount();
         string name = "Joe Bob";
         string address = "123 Butter Ln.";
         string phoneNumber = "614-867-5309";
@@ -41,12 +43,25 @@ namespace BankTellerExerciseTests.Classes
         {
             testCustomer.AddAccount(testAccount1);
             testCustomer.AddAccount(testAccount2);
-            CollectionAssert.AreEquivalent(new[] { testAccount1, testAccount2}, testCustomer.Accounts);
+            testCustomer.AddAccount(testAccount3);
+            testAccount1.Deposit(50000M);
+            testAccount2.Deposit(400M);
+            testAccount3.Deposit(3M);
+            BankAccount[] accountArray = { testAccount1, testAccount2, testAccount3 };
+            CollectionAssert.AreEquivalent(accountArray, testCustomer.Accounts);
         }
         [TestMethod]
         public void BankCustomer_IsVIP()
         {
-            Ass
+            Assert.IsFalse(testCustomer.IsVIP);
+
+            testCustomer.AddAccount(testAccount1);
+
+            testAccount1.Deposit(50000M);
+            
+            BankAccount[] accountArray = { testAccount1 };
+
+            Assert.IsTrue(testCustomer.IsVIP);
         }
     }
 }

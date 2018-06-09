@@ -31,7 +31,7 @@ namespace BankTellerExercise.Classes
         {
             return Balance -= amountToWithdraw;
         }
-        public void Transfer(BankAccount destinationAccount, decimal transferAmount)
+    public void Transfer(BankAccount destinationAccount, decimal transferAmount)
         {
             Balance -= transferAmount;
             destinationAccount.Deposit(transferAmount);

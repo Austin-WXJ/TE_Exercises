@@ -64,7 +64,7 @@ namespace BankTellerExerciseTests.Classes
             Assert.IsFalse( testCustomer.IsVIP );
 
             testCustomer.AddAccount( testAccount2 );
-            testAccount2.Deposit( 5001M );
+            testAccount2.Deposit( 5000.5M );
             Assert.IsTrue( testCustomer.IsVIP );
 
         }

@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Exercises
 {
-    class KataPotter
+    public class KataPotter
     {
+        //console read line to manually test
+
+        public decimal GetCost(int[] books)
+        {
+            return 0M;
+        }
     }
 }

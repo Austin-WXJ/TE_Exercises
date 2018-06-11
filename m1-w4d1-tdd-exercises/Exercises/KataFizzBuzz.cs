@@ -8,6 +8,11 @@ namespace Exercises
 {
     public class KataFizzBuzz
     {
-
+        public string FizzBuzz(int n)
+        {
+            string result = n.ToString();
+            return result;
+        }
     }
 }
+

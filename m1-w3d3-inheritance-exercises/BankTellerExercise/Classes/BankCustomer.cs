@@ -30,7 +30,7 @@ namespace BankTellerExercise.Classes
         {
             get
             {
-                if ((int)Accounts.Sum(Accounts => Accounts.Balance) > 25000)
+                if (Accounts.Sum(Accounts => Accounts.Balance) > 25000)
                 {
                     return true;
                 }
@@ -52,7 +52,7 @@ namespace BankTellerExercise.Classes
         //Methods
         public void AddAccount(BankAccount newAccount)
         {
-            //set a codition to not add same account
+            //set a condition to not add same account, alse require acount number
             accountList.Add(newAccount);
         }
     }

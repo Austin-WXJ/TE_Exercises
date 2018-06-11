@@ -53,15 +53,20 @@ namespace BankTellerExerciseTests.Classes
         [TestMethod]
         public void BankCustomer_IsVIP()
         {
-            Assert.IsFalse(testCustomer.IsVIP);
+            testCustomer.AddAccount( testAccount1 );
+            testAccount1.Deposit( 500M );
+            Assert.IsFalse( testCustomer.IsVIP );
 
-            testCustomer.AddAccount(testAccount1);
+            testAccount1.Deposit( 49500M );
+            Assert.IsTrue( testCustomer.IsVIP );
 
-            testAccount1.Deposit(50000M);
-            
-            BankAccount[] accountArray = { testAccount1 };
+            testAccount1.Withdraw( 30000M );
+            Assert.IsFalse( testCustomer.IsVIP );
 
-            Assert.IsTrue(testCustomer.IsVIP);
+            testCustomer.AddAccount( testAccount2 );
+            testAccount2.Deposit( 5001M );
+            Assert.IsTrue( testCustomer.IsVIP );
+
         }
     }
 }

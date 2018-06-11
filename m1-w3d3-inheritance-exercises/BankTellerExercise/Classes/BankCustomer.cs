@@ -52,6 +52,7 @@ namespace BankTellerExercise.Classes
         //Methods
         public void AddAccount(BankAccount newAccount)
         {
+            //set a codition to not add same account
             accountList.Add(newAccount);
         }
     }

@@ -9,7 +9,7 @@ namespace Exercises
     public class KataPotter
     {
 
-        private int[] collection = new int[5];
+        private int[] uniqueSets = new int[5];
         private int[] books;
         private int totalBooks;
         private decimal totalPrice;
@@ -18,7 +18,7 @@ namespace Exercises
         {
             get
             {
-                return collection;
+                return uniqueSets;
             }
         }
 
@@ -26,13 +26,13 @@ namespace Exercises
         {
             this.books = books;
             totalBooks = books.Sum();
-            collection = CollectionSort(books);
+            uniqueSets = CollectionSort(books);
             totalPrice = totalBooks * 8;
         }
 
         public int[] CollectionSort(int[] books)
         {
-            int Q = 0;
+            //int Q = 0;
 
             while (books.Sum() != 0)
             {
@@ -47,27 +47,27 @@ namespace Exercises
                     }
 
                 }
-                Q++;
-                collection[X - 1]++;
+               // Q++;
+                uniqueSets[X - 1]++;
             }
 
-            int reorder = Math.Min(collection[2], collection[4]);
+            int reorder = Math.Min(uniqueSets[2], uniqueSets[4]);
             if (reorder != 0)
             {
-                collection[2] -= reorder;
-                collection[4] -= reorder;
-                collection[3] += reorder * 2;
+                uniqueSets[2] -= reorder;
+                uniqueSets[4] -= reorder;
+                uniqueSets[3] += reorder * 2;
             }
 
-            return collection;
+            return uniqueSets;
         }
 
         public decimal GetCost()
         {
-            totalPrice -= collection[1] * 0.95M * 8;
-            totalPrice -= collection[2] * 0.90M * 8;
-            totalPrice -= collection[3] * 0.80M * 8;
-            totalPrice -= collection[4] * 0.75M * 8;
+            totalPrice -= uniqueSets[1] * 0.95M * 8;
+            totalPrice -= uniqueSets[2] * 0.90M * 8;
+            totalPrice -= uniqueSets[3] * 0.80M * 8;
+            totalPrice -= uniqueSets[4] * 0.75M * 8;
             return totalPrice;
         }
 

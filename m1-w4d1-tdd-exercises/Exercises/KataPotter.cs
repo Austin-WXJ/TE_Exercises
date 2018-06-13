@@ -64,14 +64,13 @@ namespace Exercises
 
         public decimal GetCost()
         {
-            decimal price = 0M;
+            decimal discount = 0M;
 
-            price += collection[0] * 8;
-            price += collection[1] * .95M * 8;
-            price += collection[2] * 0.90M * 8;
-            price += collection[3] * 0.80M * 8;
-            price += collection[4] * 0.75M * 8;
-            totalPrice -= price;
+            discount += collection[1] * 0.95M * 8;
+            discount += collection[2] * 0.90M * 8;
+            discount += collection[3] * 0.80M * 8;
+            discount += collection[4] * 0.75M * 8;
+            totalPrice -= discount;
 
             return totalPrice;
         }

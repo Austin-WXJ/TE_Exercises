@@ -1,16 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace QuizMaker
 {
-    public class QuizQA
+    public static class QuizQA
     {
-        string question1 = "Question 1: What is the answer?|1-This is not the answer|2-Not this one either|3-Keep moving|4-Pick Me!*";
-        string question2 = "Question 2: Can you count to three?|1-One|2-Two|3-Turtle!*|4-Four";
-        string question3 = "Question 3: How many wheels does a unicycle have?|1-One|2-Tree|3-None|4-Too many";
-        string question4 = "Question 4: What is my purpose?|1-42|2-To pass the butter|3-Be the universe experiencing itself|4-Wrangle the angry pixies";
+        public static void ReadFile()
+        {
+            string directory = (@"C:\Users\awarner\austinwarner-c-exercises\m1-w4d2-file-io-part1-exercises\QuizMaker");
+            string fileName = "QuizQA.csv";
+
+            string fullPath = Path.Combine(directory, fileName);
+            List<string> questionList = new List<string>();
+
+            try
+            {
+                using (StreamReader sr = new StreamReader(fullPath))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        string line = sr.ReadLine();
+
+                        string[] questions = line.Split('|', ',');
+                        questionList.AddRange(questions);
+                    }
+                }
+
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine("Error reading the file");
+                Console.WriteLine(e.Message);
+            }
+            foreach (string question in questionList)
+            {
+                Console.WriteLine(question);
+            }
+            Console.ReadLine();
+        }
     }
 }

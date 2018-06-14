@@ -10,6 +10,9 @@ namespace QuizMaker
     {
         static void Main(string[] args)
         {
+            QuizQA.ReadFile();
+
+
         }
     }
 }

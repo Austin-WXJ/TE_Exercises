@@ -10,9 +10,15 @@ namespace QuizMaker
     {
         static void Main(string[] args)
         {
-            QuizQA.ReadFile();
+            QuizFileRead.ReadFile();
+            bool done = false;
+
+            while (!done)
+            {
 
 
+                
+            }
         }
     }
 }

@@ -5,7 +5,7 @@
 --   The value immediately after the problem statement is the expected number of rows that should be returned by the query.
 
 -- 1. The name and population of all cities in Ontario, Canada (27 rows)
-
+SELECT * FROM 
 -- 2. The name and population of all cities in Montana (1 row)
 
 -- 3. The name, form of government, and head of state of all countries in Europe (46 rows)

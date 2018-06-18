@@ -58,8 +58,8 @@ namespace QuizMaker
                 }
 
                 Console.WriteLine($"You got {correctAnswers} answers(s) out of the total {totalQuestions} questions asked.");
-                done = true;
                 Console.ReadLine();
+                done = true;
             }
         }
     }

@@ -9,10 +9,10 @@ namespace QuizMaker
 {
     public class QuizFileRead
     {
-        public static void ReadFile()
+        public static List<QuizQuestion> ReadFile()
         {
-            string directory = Environment.CurrentDirectory;
-            //string directory = (@"C:\Users\awarner\austinwarner-c-exercises\m1-w4d2-file-io-part1-exercises\QuizMaker");
+            //string directory = Environment.CurrentDirectory;
+            string directory = (@"C:\Users\awarner\austinwarner-c-exercises\m1-w4d2-file-io-part1-exercises\QuizMaker");
             string fileName = "QuizQA.txt";
 
             string fullPath = Path.Combine(directory, fileName);
@@ -24,14 +24,29 @@ namespace QuizMaker
                 {
                     while (!sr.EndOfStream)
                     {
-                        string oneLongLine = sr.ReadLine();
-                        string[] lineCollection = oneLongLine.Split('|');
+                        string[] lineCollection = sr.ReadLine().Split('|');
+
+                        QuizQuestion eachQuestion = new QuizQuestion();
+
                         foreach (var line in lineCollection)
                         {
-                            QuizQuestion newQuestion = ParseQuestion(line);
 
+                            if (line.ToUpper().Contains("QUESTION") || line.Contains("?"))
+                            {
+                                eachQuestion.Question = line;
+                            }
+                            else if (line.Contains("*"))
+                            {
+                                string hideAnswer = line.Replace("*", "");
+                                eachQuestion.AvailableAnswers.Add(hideAnswer);
+                                eachQuestion.CorrectAnswer = line.Substring(0, 1);
+                            }
+                            else
+                            {
+                                eachQuestion.AvailableAnswers.Add(line);
+                            }
                         }
-
+                        questionList.Add(eachQuestion);
                     }
                 }
             }
@@ -40,20 +55,7 @@ namespace QuizMaker
                 Console.WriteLine("Error reading the file");
                 Console.WriteLine(e.Message);
             }
-            QuizQuestion ParseQuestion(string line)
-            {
-                QuizQuestion thisQuestion = null;
-
-                if (line.ToUpper().Contains("QUESTION") || line.Contains("?"))
-                {
-                    thisQuestion.Question = line;
-                }
-                else
-                {
-                    thisQuestion.AvailableAnswers.Add(line);
-                }
-                return thisQuestion;
-            }
+            return questionList;
         }
     }
 }

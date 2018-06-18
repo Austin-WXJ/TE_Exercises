@@ -6,26 +6,16 @@ using System.Threading.Tasks;
 
 namespace QuizMaker
 {
-    public class QuizQuestion : QuizFileRead
+    public class QuizQuestion
     {
 
         public string Question { get; set; }
         public List<string> AvailableAnswers { get; set; }
         public string CorrectAnswer { get; set; }
 
-        public string FindAnswer()
+        public QuizQuestion()
         {
-            string answer = null;
-
-            foreach (string option in AvailableAnswers)
-            {
-                if (option.Contains('*'))
-                {
-                    CorrectAnswer = option;
-                }
-            }
-
-            return answer;
+            AvailableAnswers = new List<string>();
         }
     }
 }

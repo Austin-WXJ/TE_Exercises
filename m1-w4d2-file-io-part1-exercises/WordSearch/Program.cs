@@ -27,10 +27,14 @@ namespace WordSearch
 
                     bool caseInsensitive = (caseSearch.ToUpper() == "Y");
 
+                    Console.Write("What is the directory of text file to search? ");
+                    string directory = Console.ReadLine();
+                    //string directory = Environment.CurrentDirectory;
+                    //string directory = (@"C:\Users\awarner\austinwarner-c-exercises\m1-w4d2-file-io-part1-exercises");
 
-                    string directory = (@"C:\Users\awarner\austinwarner-c-exercises\m1-w4d2-file-io-part1-exercises");
-
-                    string fileName = ("alices_adventures_in_wonderland.txt");
+                    Console.Write("what is the file to be searched? ");
+                    string fileName = Console.ReadLine();
+                    //string fileName = ("alices_adventures_in_wonderland.txt");
 
                     string fullPath = Path.Combine(directory, fileName);
 

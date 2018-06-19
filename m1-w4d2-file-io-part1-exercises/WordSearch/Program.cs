@@ -17,15 +17,7 @@ namespace WordSearch
 
                 while (!done)
                 {
-                    Console.Write("What Word do you want to find in Alice in Wonderland? ");
-                    string searchKey = Console.ReadLine();
-                    Console.WriteLine();
 
-                    Console.Write("is this search case insensitive?(Y/N): ");
-                    string caseSearch = Console.ReadLine();
-                    Console.WriteLine();
-
-                    bool caseInsensitive = (caseSearch.ToUpper() == "Y");
 
                     Console.Write("What is the directory of text file to search? ");
                     string directory = Console.ReadLine();
@@ -34,7 +26,16 @@ namespace WordSearch
 
                     Console.Write("what is the file to be searched? ");
                     string fileName = Console.ReadLine();
+
                     //string fileName = ("alices_adventures_in_wonderland.txt");
+                    Console.Write("What Word do you want to find? ");
+                    string searchKey = Console.ReadLine();
+                    Console.WriteLine();
+
+                    Console.Write("is this search case insensitive?(Y/N): ");
+                    string caseSearch = Console.ReadLine();
+                    Console.WriteLine();
+                    bool caseInsensitive = (caseSearch.ToUpper() == "Y");
 
                     string fullPath = Path.Combine(directory, fileName);
 

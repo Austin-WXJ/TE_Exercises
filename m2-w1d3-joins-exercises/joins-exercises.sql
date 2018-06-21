@@ -174,7 +174,7 @@ ORDER BY COUNT(r.rental_id) DESC --remember heiarchy
 -- 19. The top 10 actors ranked by number of rentals of films starring that actor 
 -- (#1 should be “GINA DEGENERES” with 753 rentals and #10 should be “SEAN GUINESS” with 599 rentals)
 
-SELECT TOP 11 a.first_name + ' ' + a.last_name 'actor name', COUNT(r.rental_id)
+SELECT TOP 10 a.first_name + ' ' + a.last_name 'actor name', COUNT(r.rental_id) 'Rental Count'
 FROM film f
 JOIN film_actor fa ON fa.film_id = f.film_id
 JOIN actor a ON a.actor_id = fa.actor_id
@@ -186,7 +186,7 @@ ORDER BY COUNT(r.rental_id) DESC
 -- 20. The top 5 “Comedy” actors ranked by number of rentals of films in the “Comedy” category starring that actor 
 -- (#1 should have 87 rentals and #5 should have 72 rentals)
 
-SELECT TOP 11 a.first_name + ' ' + a.last_name 'actor name', COUNT(r.rental_id)
+SELECT TOP 5 a.first_name + ' ' + a.last_name 'Top 10 Comedy Actors', COUNT(r.rental_id) 'Rental Count'
 FROM film f
 JOIN film_actor fa ON fa.film_id = f.film_id
 JOIN actor a ON a.actor_id = fa.actor_id

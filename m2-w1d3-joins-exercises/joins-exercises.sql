@@ -186,6 +186,17 @@ ORDER BY COUNT(r.rental_id) DESC
 -- 20. The top 5 “Comedy” actors ranked by number of rentals of films in the “Comedy” category starring that actor 
 -- (#1 should have 87 rentals and #5 should have 72 rentals)
 
+SELECT TOP 11 a.first_name + ' ' + a.last_name 'actor name', COUNT(r.rental_id)
+FROM film f
+JOIN film_actor fa ON fa.film_id = f.film_id
+JOIN actor a ON a.actor_id = fa.actor_id
+JOIN inventory i ON i.film_id = f.film_id
+JOIN rental r ON r.inventory_id = i.inventory_id
+JOIN film_category fc ON fc.film_id = f.film_id
+JOIN category c ON c.category_id = fc.category_id
+WHERE c.name = 'comedy'
+GROUP BY a.first_name + ' ' + a.last_name
+ORDER BY COUNT(r.rental_id) DESC
 
 
 

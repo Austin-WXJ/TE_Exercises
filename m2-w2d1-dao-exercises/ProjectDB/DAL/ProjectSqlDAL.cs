@@ -1,6 +1,7 @@
 ﻿using ProjectDB.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,8 @@ namespace ProjectDB.DAL
     public class ProjectSqlDAL
     {
         private string connectionString;
+        private const string SQL_Projects = "SELECT * FROM project";
+        private const string SQL_InsertLanguage = "INSERT INTO project (@name, @from_date, @to_date) VALUES (@Name, @StartDate, @EndDate)";
 
         // Single Parameter Constructor
         public ProjectSqlDAL(string dbConnectionString)
@@ -19,7 +22,33 @@ namespace ProjectDB.DAL
 
         public List<Project> GetAllProjects()
         {
-            throw new NotImplementedException();
+            List<Project> output = new List<Project>();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand(SQL_Projects, connection);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Project p = new Project();
+                        p.Name = Convert.ToString(reader["name"]);
+                        p.ProjectId = Convert.ToInt32(reader["project_id"]);
+                        p.StartDate = Convert.ToDateTime(reader["from_date"]);
+                        p.EndDate = Convert.ToDateTime(reader["to_date"]);
+
+                        output.Add(p);
+                    }
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
+            return output;
         }
 
         public bool AssignEmployeeToProject(int projectId, int employeeId)
@@ -34,8 +63,31 @@ namespace ProjectDB.DAL
 
         public bool CreateProject(Project newProject)
         {
-            throw new NotImplementedException();
-        }
+            bool result = false;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
 
+                    SqlCommand cmd = new SqlCommand(SQL_InsertLanguage, connection);
+                    cmd.Parameters.AddWithValue("@Name", newProject.Name);
+                    cmd.Parameters.AddWithValue("@from_date", newProject.StartDate);
+                    cmd.Parameters.AddWithValue("@to_date", newProject.EndDate);
+
+                    int count = cmd.ExecuteNonQuery();
+
+                    if (count == 1)
+                    {
+                        result = true;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
+            return result;
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace ProjectDB
         const string Command_AssignEmployeeToProject = "9";
         const string Command_RemoveEmployeeFromProject = "10";
         const string Command_Quit = "q";
-        const string DatabaseConnection = "";
+        const string DatabaseConnection = @"Data Source=.\SQLexpress;Initial Catalog=Projects;Integrated Security=True";
 
         public void RunCLI()
         {
@@ -177,7 +177,7 @@ namespace ProjectDB
 
         private void CreateDepartment()
         {
-            string departmentName = CLIHelper.GetString("Provide a name for the new department:");
+            string departmentName = CLIHelper.GetString("Provide a name for the new department: ");
             Department newDept = new Department
             {
                 Name = departmentName
@@ -194,6 +194,7 @@ namespace ProjectDB
             {
                 Console.WriteLine("*** DID NOT CREATE ***");
             }
+            Console.WriteLine();
         }
 
         private void GetAllDepartments()
@@ -207,6 +208,7 @@ namespace ProjectDB
                 {
                     Console.WriteLine(dept.Id.ToString().PadRight(10) + dept.Name.PadRight(40));
                 }
+                Console.WriteLine();
             }
             else
             {
@@ -224,7 +226,8 @@ namespace ProjectDB
                 foreach (Employee emp in employees)
                 {
                     Console.WriteLine(emp.EmployeeId.ToString().PadRight(5) + (emp.LastName + ", " + emp.FirstName).PadRight(30) + emp.JobTitle.PadRight(30) + emp.Gender.PadRight(3) + emp.BirthDate.ToShortDateString().PadRight(10));
-                }                
+                }
+                Console.WriteLine();
             }
             else
             {
@@ -282,7 +285,7 @@ namespace ProjectDB
                 {
                     Console.WriteLine(proj.ProjectId.ToString().PadRight(5) + proj.Name.PadRight(20) + proj.StartDate.ToShortDateString().PadRight(10) + proj.EndDate.ToShortDateString().PadRight(10));
                 }
-                
+                Console.WriteLine();
             }
             else
             {

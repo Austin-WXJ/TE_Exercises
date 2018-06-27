@@ -12,7 +12,9 @@ namespace ProjectDB.DAL
     {
         private string connectionString;
         private const string SQL_Projects = "SELECT * FROM project";
-        private const string SQL_InsertLanguage = "INSERT INTO project (@name, @from_date, @to_date) VALUES (@Name, @StartDate, @EndDate)";
+        private const string SQL_InsertLanguage = @"INSERT INTO project VALUES (@Name, @StartDate, @EndDate)";
+        private const string SQL_RemoveLanguage = "DELETE FROM project_employee WHERE project_id = @projectId AND employee_Id = @employeeId";
+        private const string SQL_AddLanguage = "INSERT INTO project_employee (project_id, employee_id) VALUES (@projectId, @employeeId)";
 
         // Single Parameter Constructor
         public ProjectSqlDAL(string dbConnectionString)
@@ -53,12 +55,60 @@ namespace ProjectDB.DAL
 
         public bool AssignEmployeeToProject(int projectId, int employeeId)
         {
-            throw new NotImplementedException();
+            bool result = false;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand(SQL_AddLanguage, conn);
+
+                    cmd.Parameters.AddWithValue("@projectId", projectId);
+                    cmd.Parameters.AddWithValue("@employeeId", employeeId);
+
+                    int count = cmd.ExecuteNonQuery();
+
+                    if (count == 1)
+                    {
+                        result = true;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
+            return result;
         }
 
         public bool RemoveEmployeeFromProject(int projectId, int employeeId)
         {
-            throw new NotImplementedException();
+            bool result = false;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand(SQL_RemoveLanguage, conn);
+
+                    cmd.Parameters.AddWithValue("@projectId", projectId);
+                    cmd.Parameters.AddWithValue("@employeeId", employeeId);
+
+                    int count = cmd.ExecuteNonQuery();
+
+                    if (count == 1)
+                    {
+                        result = true;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
+            return result;
         }
 
         public bool CreateProject(Project newProject)
@@ -77,7 +127,7 @@ namespace ProjectDB.DAL
 
                     int count = cmd.ExecuteNonQuery();
 
-                    if (count == 1)
+                    if (count == 3)
                     {
                         result = true;
                     }

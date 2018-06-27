@@ -13,6 +13,7 @@ namespace ProjectDB.DAL
         private string connectionString;
         private const string SQL_Departments = "SELECT department_id, name FROM department";
         private const string SQL_InsertLanguage = "INSERT INTO department (name) VALUES (@Name)";
+        private const string SQL_UpdatedLanguage = "UPDATE department SET name = @Name WHERE department_id = @id ";
 
         // Single Parameter Constructor
         public DepartmentSqlDAL(string dbConnectionString)
@@ -26,12 +27,15 @@ namespace ProjectDB.DAL
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString)) 
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
+
                     SqlCommand cmd = new SqlCommand(SQL_Departments, connection);
+
                     SqlDataReader reader = cmd.ExecuteReader();
-                    while(reader.Read())
+
+                    while (reader.Read())
                     {
                         Department d = new Department();
                         d.Name = Convert.ToString(reader["name"]);
@@ -41,7 +45,7 @@ namespace ProjectDB.DAL
                 }
 
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 throw;
             }
@@ -77,7 +81,31 @@ namespace ProjectDB.DAL
 
         public bool UpdateDepartment(Department updatedDepartment)
         {
-            throw new NotImplementedException();
+            bool result = false;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    SqlCommand cmd = new SqlCommand(SQL_UpdatedLanguage, connection);
+                    cmd.Parameters.AddWithValue("@Name", updatedDepartment.Name);
+                    cmd.Parameters.AddWithValue("@id", updatedDepartment.Id);
+
+
+                    int count = cmd.ExecuteNonQuery();
+                    
+                    if (count == 1)
+                    {
+                        result = true;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
+            return result;
         }
 
     }

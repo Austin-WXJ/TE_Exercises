@@ -106,7 +106,7 @@ namespace ProjectDB
             {
                 Console.WriteLine("*** DID NOT CREATE ***");
             }
-
+            Console.WriteLine();
         }
 
         private void AssignEmployeeToProject()
@@ -125,6 +125,7 @@ namespace ProjectDB
             {
                 Console.WriteLine("*** DID NOT CREATE ***");
             }
+            Console.WriteLine();
         }
 
         private void CreateProject()
@@ -151,9 +152,10 @@ namespace ProjectDB
             {
                 Console.WriteLine("*** DID NOT CREATE ***");
             }
+            Console.WriteLine();
         }
 
-        private void UpdateDepartment()
+        private void UpdateDepartment()//UNDONE
         {
             int departmentId = CLIHelper.GetInteger("Which department are you updating?");
             string updatedName = CLIHelper.GetString("Provide the new name:");
@@ -173,6 +175,7 @@ namespace ProjectDB
             {
                 Console.WriteLine("*** DID NOT UPDATE ***");
             }
+            Console.WriteLine();
         }
 
         private void CreateDepartment()
@@ -214,6 +217,7 @@ namespace ProjectDB
             {
                 Console.WriteLine("**** NO RESULTS ****");
             }
+            Console.WriteLine();
         }
 
         private void GetAllEmployees()
@@ -233,6 +237,7 @@ namespace ProjectDB
             {
                 Console.WriteLine("**** NO RESULTS ****");
             }
+            Console.WriteLine();
         }
 
         private void EmployeeSearch()
@@ -254,9 +259,10 @@ namespace ProjectDB
             {
                 Console.WriteLine("**** NO RESULTS ****");
             }
+            Console.WriteLine();
         }
 
-        private void GetEmployeesWithoutProjects()
+        private void GetEmployeesWithoutProjects()//UNDONE
         {
             EmployeeSqlDAL dal = new EmployeeSqlDAL(DatabaseConnection);
             List<Employee> employees = dal.GetEmployeesWithoutProjects();
@@ -272,6 +278,7 @@ namespace ProjectDB
             {
                 Console.WriteLine("**** NO RESULTS ****");
             }
+            Console.WriteLine();
         }
 
         private void GetAllProjects()
@@ -291,6 +298,7 @@ namespace ProjectDB
             {
                 Console.WriteLine("**** NO RESULTS ****");
             }
+            Console.WriteLine();
         }
 
         private void PrintHeader()

@@ -122,12 +122,12 @@ namespace ProjectDB.DAL
 
                     SqlCommand cmd = new SqlCommand(SQL_InsertLanguage, connection);
                     cmd.Parameters.AddWithValue("@Name", newProject.Name);
-                    cmd.Parameters.AddWithValue("@from_date", newProject.StartDate);
-                    cmd.Parameters.AddWithValue("@to_date", newProject.EndDate);
+                    cmd.Parameters.AddWithValue("@StartDate", newProject.StartDate);
+                    cmd.Parameters.AddWithValue("@EndDate", newProject.EndDate);
 
                     int count = cmd.ExecuteNonQuery();
 
-                    if (count == 3)
+                    if (count == 1)
                     {
                         result = true;
                     }

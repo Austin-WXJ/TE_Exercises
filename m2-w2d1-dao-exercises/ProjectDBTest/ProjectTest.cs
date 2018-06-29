@@ -91,11 +91,9 @@ namespace ProjectDBTest
             Assert.IsTrue(didWork);
         }
 
-        [TestMethod]//UNDONE
+        [TestMethod]
         public void CreateProject_Test()
         {
-            string startDate = "1111/11/11";
-            string endDate = "1212/12/12";
 
             ProjectSqlDAL projectTest = new ProjectSqlDAL(connectionString);
             Project testProject = new Project

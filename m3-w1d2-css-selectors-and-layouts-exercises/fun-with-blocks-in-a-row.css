@@ -1,0 +1,19 @@
+html {
+  color: white;
+}
+.box {
+    font: 96px Courier;
+    float: left;
+    position: static;
+    padding: 50px;
+    position: relative;
+    width: 70px;
+    height: 100px;
+}
+.odd {
+    background-color: #ee3e64;
+}
+.even {
+    background-color: #44accf;
+}
+

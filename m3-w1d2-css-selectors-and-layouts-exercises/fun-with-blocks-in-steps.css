@@ -1,0 +1,71 @@
+html {
+    color: white;
+    --vertical_offset: 209px;
+    --horizontal_offset: 170px;
+}
+.box {
+    font: 96px Courier;
+    padding: 50px;
+    width: 70px;
+  }
+  .odd {
+    background-color: #ee3e64;
+  }
+  .even {
+    background-color: #44accf;
+  }
+  body{
+      outline-width: 0px;
+      height: calc(var(--vertical_offset)*10);
+      width: calc(var(--horizontal_offset)*5);
+      margin: 0px
+  }
+#box_0 .box{
+    position: absolute;
+}
+#box_1  {
+    position: absolute;
+    top: calc(var(--vertical_offset)*1);
+    left: calc(var(--horizontal_offset)*1);
+}
+#box_2{
+    position: absolute;
+    top: calc(var(--vertical_offset)*2);
+    left: calc(var(--horizontal_offset)*2);
+}
+#box_3{
+    position: absolute;
+    top: calc(var(--vertical_offset)*3);
+    left: calc(var(--horizontal_offset)*3);
+}
+#box_4{
+    position: absolute;
+    top: calc(var(--vertical_offset)*4);
+    left: calc(var(--horizontal_offset)*4);
+}
+#box_5{
+    position: absolute;
+    top: calc(var(--vertical_offset)*5);
+    left: calc(var(--horizontal_offset)*4);
+}
+#box_6{
+    position: absolute;
+    top: calc(var(--vertical_offset)*6);
+    left: calc(var(--horizontal_offset)*3);
+}
+#box_7{
+    position: absolute;
+    top: calc(var(--vertical_offset)*7);
+    left: calc(var(--horizontal_offset)*2);
+}
+#box_8{
+    position: absolute;
+    top: calc(var(--vertical_offset)*8);
+    left: calc(var(--horizontal_offset)*1);
+}
+#box_9{
+    position: absolute;
+    top: calc(var(--vertical_offset)*9);
+    left: calc(var(--horizontal_offset)*0);
+}
+  

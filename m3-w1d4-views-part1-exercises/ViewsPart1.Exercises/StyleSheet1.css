@@ -1,0 +1,13 @@
+﻿ul {
+    list-style-type : none;
+}
+
+#FizzBuzz{
+    color: purple;
+}
+#Buzz{
+    color: red;
+}
+#Fizz{
+    color: blue;
+}

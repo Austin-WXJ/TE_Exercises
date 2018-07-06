@@ -1,0 +1,26 @@
+﻿@{
+    string word = Request.QueryString["word"];
+    int count = int.Parse(Request.QueryString["count"]);
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="C:\Users\awarner\austinwarner-c-exercises\m3-w1d4-views-part1-exercises\ViewsPart1.Exercises\StyleSheet1.css">
+    <title>Exercise 3 - Echo</title>
+</head>
+<body>
+    <div>
+        <ul>
+            @for (int i = count; i >= 0; i--)
+            {
+                string fontsize = $"font-size: {i}px;";
+                    <li style="@fontsize">@word</li>
+
+            }
+        </ul>
+    </div>
+</body>
+</html>

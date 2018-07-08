@@ -1,8 +1,8 @@
 html {
-  font: 96px Courier;
   color: white;
 }
 .box {
+  font: 96px Courier;
   padding: 50px;
   width: 70px;
 }
@@ -11,4 +11,54 @@ html {
 }
 .even {
   background-color: #44accf;
+}
+#row_1{
+  display: block;
+  text-align: center;
+  float: left;
+  padding-left: 255px;
+  padding-right: 255px;
+  width: 170px;
+  position: relative;
+
+}
+
+#row_2{
+  display: block;
+  text-align: center;
+  padding-left: 170px;
+  padding-right: 170px;
+  width: 340px;
+  position: relative;
+
+
+}
+#row_3{
+  display: block;
+  text-align: center;
+  float: left;
+  padding-left: 85px;
+  padding-right: 85px;
+  width: 510px;
+  position: relative;
+}
+#row_4{
+  display: block;
+  text-align: center;
+  padding-left: 0px;
+  float: left;
+  position: relative;
+
+}
+body{
+  position: absolute;
+  width: 680px;
+  height: 836px; 
+}
+
+body div {
+  float: left;
+  width: 680px;
+  height: 109px;
+  padding: 50px;
 }

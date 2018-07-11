@@ -35,7 +35,7 @@ namespace GetExercises.Web.Controllers
         /// </summary>
         /// <param name="request">A request model that contains the search parameters.</param>
         /// <returns></returns>
-        public ActionResult SearchResult(/*FilmSearch request */)
+        public ActionResult SearchResult(Film film)
         {
             /* Call the DAL and pass the values as a model back to the View */
             return null;

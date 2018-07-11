@@ -1,0 +1,31 @@
+﻿@model IEnumerable<GetExercises.Web.Models.Actor>
+
+@{
+    ViewBag.Title = "SearchResult";
+}
+
+<h2>SearchResult</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Actor Name
+        </th>
+        <th>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+    </tr>
+}
+
+</table>

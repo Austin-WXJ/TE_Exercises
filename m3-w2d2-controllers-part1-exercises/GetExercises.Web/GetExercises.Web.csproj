@@ -150,6 +150,8 @@
     <Content Include="Views\Film\Index.cshtml" />
     <Content Include="Views\Actor\SearchResult.cshtml" />
     <Content Include="Views\Film\SearchResult.cshtml" />
+    <Content Include="Views\Customer\SearchResult.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -159,7 +161,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Customer\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

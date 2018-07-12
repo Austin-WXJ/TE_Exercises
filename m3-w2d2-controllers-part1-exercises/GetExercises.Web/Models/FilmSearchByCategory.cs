@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using GetExercises.Web.DAL;
 using GetExercises.Web.DAL.Interfaces;
-using 
 
 namespace GetExercises.Web.Models
 {
@@ -14,6 +13,6 @@ namespace GetExercises.Web.Models
         public string Genre { get; set; }
         public int MinLength { get; set; }
         public int MaxLength { get; set; }
-
+        public IList<string> Genres { get; internal set; }
     }
 }

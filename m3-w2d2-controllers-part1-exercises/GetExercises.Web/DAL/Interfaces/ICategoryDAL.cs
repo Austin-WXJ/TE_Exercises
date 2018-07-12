@@ -7,7 +7,7 @@ using GetExercises.Web.Models;
 
 namespace GetExercises.Web.DAL.Interfaces
 {
-    interface ICategoryDAL
+    public interface ICategoryDAL
     {
         IList<string> GetCategories();
     }

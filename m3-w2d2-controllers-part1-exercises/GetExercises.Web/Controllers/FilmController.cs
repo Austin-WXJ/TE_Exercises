@@ -12,15 +12,16 @@ namespace GetExercises.Web.Controllers
     public class FilmController : Controller
     {
         private IFilmDAL filmDal;
-
+        private ICategoryDAL categoryDal;
 
         /// <summary>
         /// The MVC framework with the assistance of Ninject, automatically passes in a FilmDAL.
         /// </summary>
         /// <param name="dal"></param>
-        public FilmController(IFilmDAL filmDal)
+        public FilmController(IFilmDAL filmDal, ICategoryDAL categoryDal)
         {
             this.filmDal = filmDal;
+            this.categoryDal = categoryDal;
         }
 
         /// <summary>
@@ -29,7 +30,13 @@ namespace GetExercises.Web.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
-            return View();
+            FilmSearchByCategory model = new FilmSearchByCategory
+            {
+                Genres = categoryDal.GetCategories()
+            };
+
+            
+            return View(model);
         }
 
         /// <summary>
@@ -37,12 +44,12 @@ namespace GetExercises.Web.Controllers
         /// </summary>
         /// <param name="request">A request model that contains the search parameters.</param>
         /// <returns></returns>
-        public ActionResult SearchResult(string category, int minLength, int maxLength)
+        public ActionResult SearchResult(string genre, int minLength, int maxLength)
         {
 
             //http://localhost:50749/film/searchresult?category=comedy&minlength=60&maxlength=120
             /* Call the DAL and pass the values as a model back to the View */
-            IList<Film> filmList = dal.GetFilmsBetween(category, minLength, maxLength);
+            IList<Film> filmList = filmDal.GetFilmsBetween(genre, minLength, maxLength);
             //return View(filmList);
             return View(filmList);
         }

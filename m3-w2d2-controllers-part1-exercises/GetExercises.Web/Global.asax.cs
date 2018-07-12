@@ -32,6 +32,7 @@ namespace GetExercises.Web
             kernel.Bind<IFilmDAL>().To<FilmDAL>().WithConstructorArgument("connectionString", connectionString);
             kernel.Bind<IActorDAL>().To<ActorDAL>().WithConstructorArgument("connectionString", connectionString);
             kernel.Bind<ICustomerDAL>().To<CustomerDAL>().WithConstructorArgument("connectionString", connectionString);
+            kernel.Bind<ICategoryDAL>().To<CategoryDAL>().WithConstructorArgument("connectionString", connectionString);
 
             return kernel;
         }

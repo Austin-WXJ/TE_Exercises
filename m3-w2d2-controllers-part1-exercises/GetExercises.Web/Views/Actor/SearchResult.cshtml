@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<GetExercises.Web.Models.Actor>
+@using GetExercises.Web.Models
 
 @{
     ViewBag.Title = "SearchResult";
@@ -7,7 +8,7 @@
 <h2>SearchResult</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("New Search", "Index")
 </p>
 <table class="table">
     <tr>
@@ -19,7 +20,7 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (Actor item in Model) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.FirstName)

@@ -120,17 +120,21 @@
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\FilmController.cs" />
     <Compile Include="DAL\ActorDAL.cs" />
+    <Compile Include="DAL\CategoryDAL.cs" />
     <Compile Include="DAL\CustomerDAL.cs" />
     <Compile Include="DAL\FilmDAL.cs" />
     <Compile Include="DAL\Interfaces\IActorDAL.cs" />
+    <Compile Include="DAL\Interfaces\ICategoryDAL.cs" />
     <Compile Include="DAL\Interfaces\ICustomerDAL.cs" />
     <Compile Include="DAL\Interfaces\IFilmDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Actor.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Film.cs" />
+    <Compile Include="Models\FilmSearchByCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

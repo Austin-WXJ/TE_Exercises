@@ -26,7 +26,7 @@ namespace GetExercises.Web.DAL
                 JOIN category ON category.category_id = film_category.category_id
                 WHERE category.name = @category_name AND length BETWEEN @minLength AND @maxLength";
 
-            using(SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
@@ -55,6 +55,11 @@ namespace GetExercises.Web.DAL
                 Length = Convert.ToInt32(reader["length"]),
                 Rating = Convert.ToString(reader["rating"])
             };
+        }
+
+        private string MapToCategory(SqlDataReader reader)
+        {
+            return Convert.ToString(reader["name"]);
         }
     }
 }

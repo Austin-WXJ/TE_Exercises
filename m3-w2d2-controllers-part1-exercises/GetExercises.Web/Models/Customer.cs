@@ -12,6 +12,13 @@ namespace GetExercises.Web.Models
         public string Email { get; set; }
         public bool IsActive { get; set; }
         public string sortBy { get; set; }
+        public string Active
+        {
+            get
+            {
+                return IsActive ? "Yes" : "No";
+            }
+        }
 
         public static List<SelectListItem> sort { get; } = new List<SelectListItem>()
         {

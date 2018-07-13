@@ -12,9 +12,7 @@ namespace GetExercises.Web.DAL
     {
         private string connectionString;
         private string sql =    "SELECT first_name, last_name , email, active " +
-                                "FROM customer " +
-                                "WHERE last_name LIKE '%@search%' OR first_name LIKE '%@search%' " +
-                                "ORDER BY ";
+                                "FROM customer ";
 
         public CustomerDAL(string connectionString)
         {
@@ -23,6 +21,9 @@ namespace GetExercises.Web.DAL
 
         public IList<Customer> SearchForCustomers(string search, string sortBy)
         {
+            sql += $"WHERE last_name LIKE '%{search}%' OR first_name LIKE '%{search}%' ";
+            string orderBy = $"ORDER BY {sortBy}";
+
             IList<Customer> customers = new List<Customer>();
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -30,20 +31,20 @@ namespace GetExercises.Web.DAL
                 switch (sortBy)
                 {
                     case "active":
-                        sql += $"{sortBy}";
+                        sql += orderBy;
                         break;
                     case "email":
-                        sql += $"{sortBy}";
+                        sql += orderBy;
                         break;
                     case "last_name":
-                        sql += $"{sortBy}";
+                        sql += orderBy;
                         break;
                 }
 
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 
-                cmd.Parameters.AddWithValue("@search", search);
+                cmd.Parameters.AddWithValue("@search", "%'" + search + "%'");
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())

@@ -13,5 +13,7 @@ namespace FormsWithHttpPost.Models
         public string Title { get; set; }
         public string Message { get; set; }
         public DateTime ReviewDate { get; set; }
+
+        public int[] RatingList { get; } = Enumerable.Range(1, 5).ToArray();
     }
 }

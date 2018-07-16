@@ -43,8 +43,8 @@ namespace GetExercises.Web.DAL
 
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                
                 cmd.Parameters.AddWithValue("@search", "%'" + search + "%'");
+                
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())

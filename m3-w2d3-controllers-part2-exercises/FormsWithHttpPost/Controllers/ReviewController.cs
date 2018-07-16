@@ -9,25 +9,34 @@ using System.Web.Mvc;
 
 namespace FormsWithHttpPost.Controllers
 {
-    public class HomeController : Controller
+    public class ReviewController : Controller
     {
+
         IReviewDAL dal;
         string connectionString;
 
-        public HomeController()
+        public ReviewController()
         {
             connectionString = ConfigurationManager.ConnectionStrings["SquirrelReviews"].ConnectionString;
             dal = new ReviewSqlDAL(connectionString);
         }
 
-
-        // GET: Home
-        public ActionResult Index()
+        [HttpPost]
+        public ActionResult Index(Review review)
         {
-            List<Review> reviewList = dal.GetAllReviews();
-            return View(reviewList);
+            return View("PostReview");
         }
 
+        [HttpPost]
+        public ActionResult PostReview(Review review)
+        {
+            dal.NewReview(review);
+            return RedirectToAction("Confirmation", "Review");
+        }
 
+        public ActionResult Confirmation()
+        {
+            return View("Confirmation");
+        }
     }
 }

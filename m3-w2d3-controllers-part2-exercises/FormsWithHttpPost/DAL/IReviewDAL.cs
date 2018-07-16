@@ -10,6 +10,6 @@ namespace FormsWithHttpPost.DAL
     public interface IReviewDAL
     {
         List<Review> GetAllReviews();
-        bool SaveReview(Review newReview);
+        bool NewReview(Review newReview);
     }
 }

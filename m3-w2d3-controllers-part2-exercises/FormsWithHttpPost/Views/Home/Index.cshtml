@@ -1,0 +1,30 @@
+﻿@model IEnumerable<FormsWithHttpPost.Models.Review>
+
+<h2>Reviews</h2>
+
+<img src="~/Content/forDummies.png" />
+
+@foreach (var item in Model)
+{
+    int starCount = item.Rating;
+
+    <div>
+        <b>@Html.DisplayFor(modelItem => item.Title)</b>
+        <span>
+
+            @for (int i = 0; i < starCount; i++)
+            {
+                <img src="~/Content/star.png" />
+            }
+        </span>
+        <br />
+        Review By @Html.DisplayFor(modelItem => item.Username) on @Html.DisplayFor(modelItem => item.ReviewDate)
+        <br />
+        <br />    @Html.DisplayFor(modelItem => item.Message)
+        <br />
+    </div>
+}
+<h3>
+    @Html.ActionLink("Add A Review", "Review")
+</h3>
+

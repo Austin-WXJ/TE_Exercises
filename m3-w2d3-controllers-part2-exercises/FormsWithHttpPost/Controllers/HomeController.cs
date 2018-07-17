@@ -28,6 +28,29 @@ namespace FormsWithHttpPost.Controllers
             return View(reviewList);
         }
 
+        public ActionResult NewReview()
+        {
+            return View("NewReview");
+        }
+
+        [HttpPost]
+        public ActionResult PostReview(Review review)
+        {
+            if (ModelState.IsValid)
+            {
+                dal.NewReview(review);
+                return RedirectToAction("Confirmation", review);
+            }
+            else
+            {
+                return View("NewReview");
+            }
+        }
+
+        public ActionResult Confirmation()
+        {
+            return View("Confirmation");
+        }
 
     }
 }

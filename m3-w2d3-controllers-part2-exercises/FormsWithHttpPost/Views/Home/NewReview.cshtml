@@ -1,17 +1,17 @@
-﻿@model FormsWithHttpPost.Models.Review
+﻿@model FormsWithHttpPost.Models.NewReview
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "NewReview";
 }
 
-<h2>Index</h2>
+<h2>NewReview</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("PostReview", "Home", FormMethod.Post)) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Review</h4>
+        <h4>NewReview</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

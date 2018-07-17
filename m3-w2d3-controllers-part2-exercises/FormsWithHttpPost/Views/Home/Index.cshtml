@@ -1,10 +1,11 @@
-﻿@model IEnumerable<FormsWithHttpPost.Models.Review>
+﻿@using FormsWithHttpPost.Models;
+@model IEnumerable<FormsWithHttpPost.Models.Review>
 
 <h2>Reviews</h2>
 
 <img src="~/Content/forDummies.png" />
 
-@foreach (var item in Model)
+@foreach (Review item in Model)
 {
     int starCount = item.Rating;
 
@@ -25,6 +26,6 @@
     </div>
 }
 <h3>
-    @Html.ActionLink("Add A Review", "Review")
+    @Html.ActionLink("Add Review", "NewReview")
 </h3>
 

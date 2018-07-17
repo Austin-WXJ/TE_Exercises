@@ -12,7 +12,7 @@ namespace FormsWithHttpPost.DAL
     {
         private string connectionString;
         private string sqlListAll = "SELECT * FROM reviews ";
-        private string sqlInsert = "INSERT INTO review (username, rating, review_title, review_text, review_date) " +
+        private string sqlInsert = "INSERT INTO reviews (username, rating, review_title, review_text, review_date) " +
                                    "VALUES (@userName, @rating, @title, @message, @date)";
 
 
@@ -48,7 +48,7 @@ namespace FormsWithHttpPost.DAL
         {
             bool isSaved = false;
 
-            using (SqlConnection conn = new SqlConnection())
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sqlInsert, conn);

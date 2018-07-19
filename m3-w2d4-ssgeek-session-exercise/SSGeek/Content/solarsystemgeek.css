@@ -94,7 +94,7 @@ li a:hover {
 }
 
 .planets * {
-    color: #FFFFFF;
+    color: black;
 }
 
 
@@ -164,7 +164,7 @@ input[type=text], input[type=datetime], textarea {
 }
 
 th, td {
-    color: white;
+    color: black;
 }
 
 table tr:first-child {
@@ -214,4 +214,25 @@ section.centeredPanel {
     font-size: 16px;
     padding: 10px;
     margin-bottom: 10px;
+}
+
+.list-item{
+
+}
+#image{
+    width: 200px;
+}
+
+#price{
+    font-weight: bold;
+    color: royalblue;
+}
+
+#name {
+    font-weight: bold;
+}
+
+.item-details-image{
+    width: 400px;
+    display: inline-block;
 }

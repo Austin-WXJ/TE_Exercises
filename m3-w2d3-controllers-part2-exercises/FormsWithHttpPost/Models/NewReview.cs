@@ -26,7 +26,7 @@ namespace FormsWithHttpPost.Models
 
         [Required]
         [DataType(DataType.DateTime)]
-        public DateTime ReviewDate { get; set; } = DateTime.Now;
+        public DateTime ReviewDate { get; } = DateTime.Now;
 
         public int[] RatingList { get; } = Enumerable.Range(1, 5).ToArray();
     }

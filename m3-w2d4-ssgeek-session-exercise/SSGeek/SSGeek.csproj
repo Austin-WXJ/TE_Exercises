@@ -121,6 +121,14 @@
     <Content Include="Content\img\venus.jpg" />
     <Content Include="Content\solarsystemgeek.css" />
     <Content Include="Global.asax" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +136,7 @@
     <Compile Include="Controllers\CalculatorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlanetsController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="DAL\ForumPostSqlDAL.cs" />
     <Compile Include="DAL\IForumPostDAL.cs" />
     <Compile Include="DAL\IProductDAL.cs" />
@@ -136,8 +145,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AlienAgeModel.cs" />
+    <Compile Include="Models\CartProduct.cs" />
     <Compile Include="Models\ForumPost.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ShoppingCartModel.cs" />
     <Compile Include="Models\TriviaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -146,6 +157,11 @@
     <Content Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Planets\Index.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\ViewProduct.cshtml" />
+    <Content Include="Views\ShoppingCart\ViewCart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

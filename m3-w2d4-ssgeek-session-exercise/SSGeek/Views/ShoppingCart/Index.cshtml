@@ -1,0 +1,26 @@
+﻿@model IEnumerable<SSGeek.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Solar System Geek Gift Shop</h2>
+
+@foreach (var item in Model)
+{
+    <div class="list-item">
+        <a href="@Url.Action("ViewProduct", "ShoppingCart", new { id = item.ProductId })">@* need to make link to display single object *@
+        <p>
+            <img id="image" src="~/Content/img/@item.ImageName" />
+        </p>
+
+        <p id="name"> @Html.DisplayFor(modelItem => item.Name)</p>
+
+        <p id="price">
+            $@Html.DisplayFor(modelItem => item.Price)
+        </p>
+        </a>
+    </div>
+
+}
+

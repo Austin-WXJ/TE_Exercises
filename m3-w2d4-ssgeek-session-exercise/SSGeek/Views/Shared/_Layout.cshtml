@@ -22,12 +22,15 @@
         <ul>
             <li>@Html.ActionLink("Alien Age", "AlienAge", "Calculators")</li>
             <li>@Html.ActionLink("Alien Weight", "AlienWeight", "Calculators")</li>
-            <li>@Html.ActionLink("Alien Travel Time", "AlienTravel", "Calculators")</li>            
+            <li>@Html.ActionLink("Alien Travel Time", "AlienTravel", "Calculators")</li>
+            <li>@Html.ActionLink("Space Forum","Index", "Forum")</li>
+            <li>@Html.ActionLink("Space Store", "Index", "ShoppingCart")</li>
 
         </ul>
     </nav>
-
+    <section class="centeredPanel">
     @RenderBody()
+    </section>
 
 </body>
 </html>

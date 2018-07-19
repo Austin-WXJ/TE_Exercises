@@ -1,0 +1,53 @@
+﻿@using SSGeek.Models
+@model ShoppingCartModel
+
+@{
+    ViewBag.Title = "ViewCart";
+}
+
+<h2>ViewCart</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+        </th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+    </tr>
+
+    @foreach (CartProduct item in Model.Items)
+    {
+        <tr>
+            <td>
+                <img src="~/Content/img/@item.Product.ImageName" />
+            </td>
+            <td>
+                @item.Product.Name
+            </td>
+            <td>
+                $@item.Product.Price
+            </td>
+            <td>
+                @item.Quantity
+            </td>
+            <td>
+                @(String.Format("{0:C}", item.Total))
+            </td>
+        </tr>
+    }
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+            <div>Grand Total</div>
+            @(String.Format("{0:C}", Model.GrandTotal))
+        </td>
+    </tr>
+</table>

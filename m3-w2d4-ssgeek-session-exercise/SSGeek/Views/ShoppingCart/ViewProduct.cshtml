@@ -1,0 +1,33 @@
+﻿@model SSGeek.Models.Product
+
+@{
+    ViewBag.Title = "ViewProduct";
+}
+<h2>Solar System Geek Gift Shop</h2>
+
+<div>
+
+    <h1 id="name">@Html.DisplayFor(model => model.Name)</h1>
+    <dl class="dl-horizontal">
+        <dd>
+            <img class="item-details-image" src="~/Content/img/@Model.ImageName" />
+        </dd>
+
+        <dd id="price">
+            $@Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dd>
+            Quantity to Buy
+            <form action="/ShoppingCart/AddToCart" method="post">
+                <input type="text" name="quantity"/>
+                <input type="hidden" value="@Model.ProductId" name="id" />
+                <button>Add to Cart</button>
+            </form>
+        </dd>
+
+    </dl>
+</div>

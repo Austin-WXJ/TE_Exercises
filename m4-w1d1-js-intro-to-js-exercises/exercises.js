@@ -127,28 +127,28 @@ function oddOnly(arg){
 }
 
 function weave(argOne, argTwo){
-    var returnArg = [];
-    var isTrue = argTwo.length > argOne.length;
-    weaveLength = argOne.length + argTwo.length;
-    switch(isTrue)
-    {
-        case true:
-        for( i = 0 ; i < weaveLength ; i+2){
-            if(argTwo[i-1]!= undefined || argTwo[i+1]!= undefined){
-                returnArg[i] = argOne[i]; 
-                returnArg[i+1] = argTwo[i-1];
-            }
-        }
-        break;
-        case false:
-            for( i = 0 ; i < weaveLength ; i++){
-                if(argOne[i-1]!= undefined || argOne[i+1]!= undefined){
-                    returnArg[i] = argOne[i]; 
-                    returnArg[i+1] = argTwo[i-1];
-                }
-            }
+    // var returnArg = [];
+    // var isTrue = argTwo.length > argOne.length;
+    // weaveLength = argOne.length + argTwo.length;
+    // switch(isTrue)
+    // {
+    //     case true:
+    //     for( i = 0 ; i < weaveLength ; i+2){
+    //         if(argTwo[i-1]!= undefined || argTwo[i+1]!= undefined){
+    //             returnArg[i] = argOne[i]; 
+    //             returnArg[i+1] = argTwo[i-1];
+    //         }
+    //     }
+    //     break;
+    //     case false:
+    //         for( i = 0 ; i < weaveLength ; i++){
+    //             if(argOne[i-1]!= undefined || argOne[i+1]!= undefined){
+    //                 returnArg[i] = argOne[i]; 
+    //                 returnArg[i+1] = argTwo[i-1];
+    //             }
+    //         }
 
-        break;
-    }
-    return returnArg;
+    //     break;
+    // }
+    // return returnArg;
 }

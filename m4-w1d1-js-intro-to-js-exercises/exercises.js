@@ -178,3 +178,26 @@ function fizzBuzz(arg){
         return arg;
     }
 }
+
+function countValues(arg){
+    var result = {};
+
+    for (i = 0;i < arg.length; i++){
+        key = arg[i];
+        value = 1;
+
+        if(result[key]!== undefined){
+            value = result[key];
+            value++;
+            result[key] = value;
+        }
+        else{
+            result[key] = value;
+        }
+    }
+    return result;
+}
+
+function reverseArray(arg){
+    return arg.reverse();
+}

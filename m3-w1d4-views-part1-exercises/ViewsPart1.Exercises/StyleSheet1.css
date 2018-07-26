@@ -2,12 +2,12 @@
     list-style-type : none;
 }
 
-#FizzBuzz{
+.FizzBuzz{
     color: purple;
 }
-#Buzz{
+.Buzz{
     color: red;
 }
-#Fizz{
+.Fizz{
     color: blue;
 }

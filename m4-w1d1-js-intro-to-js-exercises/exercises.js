@@ -127,28 +127,54 @@ function oddOnly(arg){
 }
 
 function weave(argOne, argTwo){
-    // var returnArg = [];
-    // var isTrue = argTwo.length > argOne.length;
-    // weaveLength = argOne.length + argTwo.length;
-    // switch(isTrue)
-    // {
-    //     case true:
-    //     for( i = 0 ; i < weaveLength ; i+2){
-    //         if(argTwo[i-1]!= undefined || argTwo[i+1]!= undefined){
-    //             returnArg[i] = argOne[i]; 
-    //             returnArg[i+1] = argTwo[i-1];
-    //         }
-    //     }
-    //     break;
-    //     case false:
-    //         for( i = 0 ; i < weaveLength ; i++){
-    //             if(argOne[i-1]!= undefined || argOne[i+1]!= undefined){
-    //                 returnArg[i] = argOne[i]; 
-    //                 returnArg[i+1] = argTwo[i-1];
-    //             }
-    //         }
+    var returnArg = [];
 
-    //     break;
-    // }
-    // return returnArg;
+    var weaveLength = (argOne.length + argTwo.length);
+
+        for( i = 0 ; i < weaveLength ; i++){
+
+            if(argOne[i] != undefined){
+                returnArg.push(argOne[i]);
+            }
+            if(argTwo[i] != undefined){
+                returnArg.push(argTwo[i]);
+            }
+        }
+        return returnArg;
+    }
+
+function cigarParty(num, isWeekEnd){
+    if(isWeekEnd){
+        return true;
+    }
+    else if(num > 40 && num< 60){
+        return true;
+    }
+    else{ return false;}
+}
+
+function stringSplosion(input){
+
+    var output = "";
+    for(i= 0; i< input.length; i++){
+
+        output+=input.substring(0, i+1);
+
+    }
+    return output;
+}
+
+function fizzBuzz(arg){
+    if (arg %15 ===0){
+        return "FizzBuzz";
+    }
+    else if(arg% 5 === 0){
+        return "Buzz";
+    }
+    else if(arg % 3 === 0){
+        return "Fizz";
+    }
+    else{
+        return arg;
+    }
 }

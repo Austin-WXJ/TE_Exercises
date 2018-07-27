@@ -41,7 +41,7 @@ namespace HistoryGeek.Web.DataAccess
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    user.Id = conn.QueryFirst<int>("INSERT INTO users VALUES (@emailValue, @passwordValue); SELECT CAST(SCOPE_IDENTITY() as int);",
+                    user.Id = conn.QueryFirst<int>("INSERT INTO users (email, password) VALUES (@emailValue, @passwordValue); SELECT CAST(SCOPE_IDENTITY() as int);",
                         new { emailValue = user.Email, passwordValue = user.Password } );
                 }
             }
